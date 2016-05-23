@@ -2,64 +2,11 @@ Rails.application.routes.draw do
 
   get 'pages/home'
 
-  get 'reviews/index'
-
-  get 'reviews/new'
-
-  get 'reviews/create'
-
-  get 'reviews/edit'
-
-  get 'reviews/update'
-
-  get 'reviews/show'
-
-  get 'reviews/destroy'
-
-  get 'bookings/index'
-
-  get 'bookings/new'
-
-  get 'bookings/create'
-
-  get 'bookings/edit'
-
-  get 'bookings/update'
-
-  get 'bookings/show'
-
-  get 'bookings/destroy'
-
-  get 'services/index'
-
-  get 'services/new'
-
-  get 'services/create'
-
-  get 'services/edit'
-
-  get 'services/show'
-
-  get 'services/update'
-
-  get 'services/destroy'
-
-  get 'profiles/index'
-
-  get 'profiles/show'
-
-  get 'profiles/new'
-
-  get 'profiles/create'
-
-  get 'profiles/edit'
-
-  get 'profiles/update'
-
-  get 'profiles/destroy'
-
   root "users#index"
-
+  resources :users
+  resources :profiles
+  resources :services
+  resources :bookings
   resources :sessions, only: [:new, :create, :destroy]
   get '/log_in', to: 'sessions#new', as: :log_in
   delete '/log_out', to: 'sessions#destroy', as: :log_out
