@@ -11,7 +11,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523185117) do
+ActiveRecord::Schema.define(version: 20160523204505) do
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "date_time"
+    t.string   "address"
+    t.integer  "num_of_hours"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "service_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "age"
+    t.string   "description"
+    t.integer  "exp_num"
+    t.string   "education"
+    t.string   "language"
+    t.string   "availability"
+    t.integer  "travel_propensity"
+    t.string   "transportation"
+    t.boolean  "pets"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "service_id"
+    t.integer  "user_id"
+    t.string   "description"
+    t.integer  "star_rating"
+    t.integer  "dependability"
+    t.integer  "punctuality"
+    t.integer  "reliable_transportation"
+    t.boolean  "hire_again"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.boolean  "infant_care"
+    t.boolean  "toddler_care"
+    t.boolean  "tween_care"
+    t.boolean  "teenage_care"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                        null: false

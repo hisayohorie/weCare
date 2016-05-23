@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_id: 1
+  user_id: 1
+  description: MyString
+  star_rating: 1
+  dependability: 1
+  punctuality: 1
+  reliable_transportation: 1
+  hire_again: false
+
+two:
+  service_id: 1
+  user_id: 1
+  description: MyString
+  star_rating: 1
+  dependability: 1
+  punctuality: 1
+  reliable_transportation: 1
+  hire_again: false

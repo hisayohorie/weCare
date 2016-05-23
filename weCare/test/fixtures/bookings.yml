@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  date_time: 2016-05-23 16:31:50
+  address: MyString
+  num_of_hours: 1
+
+two:
+  user_id: 1
+  date_time: 2016-05-23 16:31:50
+  address: MyString
+  num_of_hours: 1

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile_id: 1
+  0yr-3yr: false
+  4yr-7yr: false
+  8yr-12yr: false
+  13yr-16yr: false
+
+two:
+  profile_id: 1
+  0yr-3yr: false
+  4yr-7yr: false
+  8yr-12yr: false
+  13yr-16yr: false
