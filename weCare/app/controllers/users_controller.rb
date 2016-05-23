@@ -1,22 +1,21 @@
 class UsersController < ApplicationController
-  def index
-  end
-
-  def show
-  end
-
   def new
-  end
+   @user = User.new
+ end
 
-  def create
-  end
+ def create
+   @user = User.new(user_params)
+   if @user.save
+     login(params[:user][:email], params[:user][:password])
+     redirect_to root_path
+   else
+     render 'new'
+   end
+ end
 
-  def edit
-  end
+ private
 
-  def update
-  end
-
-  def delete
-  end
+ def user_params
+   params.require(:user).permit(:email, :password, :password_confirmation, :name)
+ end
 end
