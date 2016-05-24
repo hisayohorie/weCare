@@ -1,4 +1,7 @@
 <h1>WeRoboCare your loved ones</h1>
 
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag "Search robositters near me", id: "seearch_button" %>
+<%= form_tag profiles_path, method: :get do %>
+  <%= label_tag :search, params[:search] %>
+  <%= text_field_tag :search%>
+  <%= submit_tag "Search robositters near me", id: "search_button" %>
+<% end %>

@@ -4,11 +4,16 @@ class ProfilesController < ApplicationController
 
   def index
       if params[:search]
-       @profiles = Profile.near(params[:search])
+        @profiles =[]
+        User.near(params[:search]).each do |u|
+          @profiles << u.profile
+          @profiles.compact!
+        end
       else
        @profiles = Profile.all
-      end
+     end
   end
+
 
   def show
     @profile = Profile.find(params[:id])

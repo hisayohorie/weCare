@@ -5,7 +5,7 @@ class Profile < ActiveRecord::Base
 
 
   def display_distance_to(user)
-    self.distance_to(user, :km).round(2)
+    self.user.distance_to(user, :km).round(2)
   end
 
 end
