@@ -1,19 +1,7 @@
-<div class="user_index">
-
-<h1>Robositters</h1>
 
 <%= text_field_tag :search, params[:search] %>
 <%= button_tag "Find robositters near me", id: "button" %>
 
-  <% @users.each do |user| %>
-    <%= link_to user_path(user) do %>
-    <%= image_tag user.photo %><br/>
-    <%= user.first_name %><%= user.last_name %><br/>
-    <%= user.email %><br/>
-    <% end %>
-  <% end %>
-
-</div>
 
 <% if @babysitter_nearby %>
   <% @babysitter_nearby.each do |p| %>

@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'pages/home'
 
-  root "users#index"
+  root "pages#home"
   resources :users do
     resources :profiles
   end
   # resources :services
   resources :bookings do
-    resources :reviws
+    resources :reviews
   end
   # resources :bookings, only: [:new, :create, :destroy]
 
@@ -18,9 +17,6 @@ Rails.application.routes.draw do
   delete '/log_out', to: 'sessions#destroy', as: :log_out
   resources :users, only: [:new, :create]
   get '/sign_up', to: 'users#new', as: :sign_up
-
-
-
 
 
 
