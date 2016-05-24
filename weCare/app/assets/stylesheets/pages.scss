@@ -26,3 +26,45 @@ body {
   background-color: $grey_trans;
   margin: 0;
 }
+
+.home_nav {
+  float: left;
+  display: inline-block;
+  font-size: 0.8rem;
+  a{
+    color: $black;
+  }
+}
+
+nav {
+  background-color: $orange;
+  margin: 5px;
+  overflow: hidden;
+
+
+  ul {
+    list-style: none;
+    display: inline-flex;
+    justify-content: flex-end;
+    // width: 100%;
+    float: right;
+    font-size: 0.8rem;
+    overflow: hidden;
+    margin:0;
+  }
+
+  li {
+    display: block;
+    text-decoration: none;
+    color: $black;
+      }
+
+  a {
+    display: block;
+    // padding: 6px 12px;
+    text-decoration: none;
+    color: $black;
+    padding-right: 20px;
+    padding: 5px 5px;
+  }
+}
