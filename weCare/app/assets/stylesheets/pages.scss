@@ -23,22 +23,14 @@ html, body {
 body {
   font: 100% $font-stack;
   color: $black;
-  background-color: $grey_trans;
+  background-color: white;
   margin: 0;
 }
 
-.home_nav {
-  float: left;
-  display: inline-block;
-  font-size: 0.8rem;
-  a{
-    color: $black;
-  }
-}
-
-nav {
+.nav {
   background-color: $orange;
-  margin: 5px;
+  margin: o;
+  line-height: 20px;
   overflow: hidden;
 
 
@@ -56,15 +48,33 @@ nav {
   li {
     display: block;
     text-decoration: none;
-    color: $black;
+    color: white;
       }
 
   a {
     display: block;
     // padding: 6px 12px;
     text-decoration: none;
-    color: $black;
+    color: white;
     padding-right: 20px;
     padding: 5px 5px;
   }
+}
+
+.home_nav {
+  float: left;
+  display: inline-block;
+  font-size: 0.8rem;
+  a{
+    color: $green;
+  }
+}
+
+.login_modal {
+  display: none;
+
+}
+
+.signup_modal {
+  display: none;
 }
