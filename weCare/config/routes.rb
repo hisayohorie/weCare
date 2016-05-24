@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   get 'pages/home'
 
   root "users#index"
-  resources :users
-  resources :profiles
+  resources :users do
+    resources :profiles
+  end
   resources :services
   resources :bookings
+  resources :reviews
   resources :sessions, only: [:new, :create, :destroy]
   get '/log_in', to: 'sessions#new', as: :log_in
   delete '/log_out', to: 'sessions#destroy', as: :log_out
