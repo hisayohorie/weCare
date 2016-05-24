@@ -1,18 +1,23 @@
 Rails.application.routes.draw do
 
   get 'pages/home'
-    root "users#index"
+
+  root "users#index"
+  resources :users do
+    resources :profiles
+  end
+  resources :services
+  resources :bookings
+  resources :bookings, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :destroy]
+
+
   get '/log_in', to: 'sessions#new', as: :log_in
   delete '/log_out', to: 'sessions#destroy', as: :log_out
   resources :users, only: [:new, :create]
   get '/sign_up', to: 'users#new', as: :sign_up
 
-  resources :users do
-    resources :profiles
-  end
-  resources :services
-  resources :bookings, only: [:new, :create, :destroy]
-  resources :sessions, only: [:new, :create, :destroy]
+
 
 
 
