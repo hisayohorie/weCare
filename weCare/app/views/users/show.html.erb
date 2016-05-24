@@ -1,2 +1,11 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Users</h1>
+
+
+  <% @users.each do |user| %>
+      <%= link_to user_path(user) do %>
+      <%= image_tag user.photo %><br/>
+      <%= user.first_name %><%= user.last_name %><br/>
+      <%= user.address %><br/>
+      <%= guide.email %><br/>
+      <% end %>
+  <% end %>

@@ -1,3 +1,28 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+
+$font-stack: Helvetica, sans-serif;
+$green: #AAF200;
+$orange: #FF8000;
+$light_grey: 	#cccccc;
+$grey_trans: rgba(204, 204, 204, 0.5);
+$black: #282828;
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font: 100% $font-stack;
+  color: $black;
+  background-color: $grey_trans;
+  margin: 0;
+}
