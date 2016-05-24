@@ -25,7 +25,7 @@ end
 
 def update
   @user = User.find(current_user)
-  if @user.update_attributes(user_params_edit)
+  if @user.update_attributes(user_params)
     redirect_to current_user
   else
     render :edit
@@ -33,10 +33,6 @@ def update
 end
 
  private
- def user_params_edit
-   params.require(:user).permit(:name, :email)
- end
-
  def user_params
    params.require(:user).permit(:email, :password, :password_confirmation, :name)
  end
