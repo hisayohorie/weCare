@@ -1,5 +1,5 @@
 <h1>Log In</h1>
-<%= form_tag sessions_path, method: :post do %>
+<%= form_tag log_in_path, method: :post do %>
  <div class="form-group">
    <%= label_tag :email %>
    <%= email_field_tag :email, nil, class: 'form-control', required: true %>
@@ -15,5 +15,5 @@
     <%= check_box_tag :remember_me %>
   </div>
 
- <%= submit_tag 'Log In', class: 'btn btn-primary btn-lg' %>
+ <%= submit_tag 'Log In', class: 'submit_button' %>
 <% end %>

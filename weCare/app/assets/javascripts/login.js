@@ -1,8 +1,8 @@
-$(Document).on('ready', function(){
+$(document).on('ready', function(){
   $('.login_button').on('click', function(e){
-    e.preventDefault();
 
     $('.login_modal').fadeIn();
+    e.preventDefault();
 
   });
 

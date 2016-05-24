@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>WeCare</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -10,10 +10,10 @@
 
   <div class="nav">
         <ul class="navbar">
-          <li class = "home_nav"><%= link_to 'Home', users_path %></li>
+          <li class = "home_nav"><%= link_to 'WeRoboCare', users_path %></li>
 
           <% if current_user %>
-            <li><span><%= current_user.first_name %></span></li>
+            <li>Welcome, <span><%= current_user.first_name %></span></li>
             <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Sign Up', sign_up_path, class: "signup_button" %></li>

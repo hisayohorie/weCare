@@ -1,5 +1,6 @@
-<h1>Users</h1>
+<div class="user_index">
 
+<h1>Robositters</h1>
 
   <% @users.each do |user| %>
     <%= link_to user_path(user) do %>
@@ -9,3 +10,5 @@
     <%= user.email %><br/>
     <% end %>
   <% end %>
+
+</div>
