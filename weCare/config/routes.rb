@@ -8,13 +8,19 @@ Rails.application.routes.draw do
   end
   resources :services
   resources :bookings
-  resources :reviews
+  resources :bookings, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
+
+
   get '/log_in', to: 'sessions#new', as: :log_in
   delete '/log_out', to: 'sessions#destroy', as: :log_out
-
   resources :users, only: [:new, :create]
   get '/sign_up', to: 'users#new', as: :sign_up
+
+
+
+
+
 
   # get '/secret', to: 'pages#index', as: :secret
   # root to: 'pages#index'
