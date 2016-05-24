@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   resources :users do
     resources :profiles
   end
-  resources :services
-  resources :bookings
-  resources :bookings, only: [:new, :create, :destroy]
-  resources :sessions, only: [:new, :create, :destroy]
+  # resources :services
+  resources :bookings do
+    resources :reviws
+  end
+  # resources :bookings, only: [:new, :create, :destroy]
+
 
 
   get '/log_in', to: 'sessions#new', as: :log_in

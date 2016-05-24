@@ -14,11 +14,9 @@ class ReviewsController < ApplicationController
 
   def create
     if current_user
-    @booking = Booking.find(params[:booking_id])
     @review = Review.new
-    @review.booking_id = @booking.id
     if @review.save
-      flas[:notice] = "Review is succesfully created"
+      flash[:notice] = "Review is succesfully created"
       redirect_to :review
     else
       render :new
