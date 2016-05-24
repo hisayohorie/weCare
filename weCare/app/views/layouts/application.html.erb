@@ -8,10 +8,10 @@
 </head>
 <body>
 
-  <div id="navbar">
-        <ul class="nav navbar-nav">
+  <div id="nav">
+        <ul class="navbar">
           <% if current_user %>
-            <li><%= link_to 'Home', users_path %></li>
+            <li class = "home_nav"><%= link_to 'Home', users_path %></li>
           <% else %>
             <li><%= link_to 'Sign Up', sign_up_path %></li>
             <li><%= link_to 'Log In', log_in_path %></li>
