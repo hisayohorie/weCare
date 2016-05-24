@@ -33,6 +33,7 @@ gem 'validates_email_format_of'
 
 gem 'faker'
 
+gem 'geocoder'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

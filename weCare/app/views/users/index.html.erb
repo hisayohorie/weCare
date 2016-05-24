@@ -2,13 +2,25 @@
 
 <h1>Robositters</h1>
 
+<%= text_field_tag :search, params[:search] %>
+<%= button_tag "Find robositters near me", id: "button" %>
+
   <% @users.each do |user| %>
     <%= link_to user_path(user) do %>
     <%= image_tag user.photo %><br/>
     <%= user.first_name %><%= user.last_name %><br/>
-    <%= user.address %><br/>
     <%= user.email %><br/>
     <% end %>
   <% end %>
 
 </div>
+
+<% if @babysitter_nearby %>
+  <% @babysitter_nearby.each do |p| %>
+    <li>
+        <%= p.name %>
+        <%= p.address %>
+        <%= p.display_distance_to(@user, :km).round(2)%><p>kms away</p>
+    </li>
+  <%end%>
+<%end%>

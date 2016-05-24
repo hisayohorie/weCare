@@ -1,6 +1,13 @@
+
 class ProfilesController < ApplicationController
+
+
   def index
-    @profiles = Profile.all
+      if params[:search]
+       @profiles = Profile.near(params[:search])
+      else
+       @profiles = Profile.all
+      end
   end
 
   def show

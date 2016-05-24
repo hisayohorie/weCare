@@ -14,7 +14,28 @@ require 'faker'
 #   parent.email:Faker::Email.email
 #   parent.photo:Faker::Avatar.image
 # end})
+User.destroy_all
+Profile.destroy_all
 
-100.times do
- User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, address: [Faker::Address.city, Faker::Address.street_address, Faker::Address.postcode].join(', '), email: Faker::Internet.email, password: Faker::Number.number(4),photo: Faker::Avatar.image)
+10.times do
+ User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, address: '220 King St W, Suite 200, Toronto, ON M5H 1K4', email: Faker::Internet.email, password: Faker::Number.number(4),photo: Faker::Avatar.image)
+ sleep 2
 end
+
+
+
+
+Profile.create!(
+user_id: User.first.id,
+age: 56,
+description: "Fun and kind",
+exp_num: 4,
+education: "Havard educated",
+language: "French",
+availability: "Full-time",
+travel_propensity: 30,
+transportation: "car",
+pets: true,
+phone_number: 666666666,
+
+)
