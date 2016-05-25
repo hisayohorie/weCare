@@ -4,11 +4,10 @@ class ProfilesController < ApplicationController
 
   def index
       if params[:search]
-        @profiles =[]
-        User.near(params[:search]).each do |u|
-          @profiles << u.profile
-          @profiles.compact!
-        end
+        @profiles = Profile.near(params[:search])
+        # @profiles =[]
+        # Profile.near(params[:search]).each do |p|
+        #   @profiles << p.profile
       else
        @profiles = Profile.all
      end
@@ -53,7 +52,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(:user_id, :age, :description, :exp_num, :education, :language, :availability, :travel_propensity, :pets)
+    params.require(:profile).permit(:user_id, :age, :description, :exp_num, :education, :language, :availability, :travel_propensity, :pets, :address)
 
   end
 end

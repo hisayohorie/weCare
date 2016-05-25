@@ -14,4 +14,5 @@ private
   def assign_user
     @user ||= User.new
   end
+
 end
