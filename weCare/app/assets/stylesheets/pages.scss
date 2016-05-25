@@ -104,3 +104,30 @@ h1 {
   height: 400px;
   width: 400px;
 }
+
+.homepage_pic{
+  background-image: url("robocare.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  h1{
+    text-align: center;
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  .search{
+    text-align: center;
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+}

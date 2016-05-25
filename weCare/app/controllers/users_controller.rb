@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 def new
   @user = User.new
 end
+
 def index
   @users = User.all
   @nearby_users = @user.nearbys(2, unit: :km)
