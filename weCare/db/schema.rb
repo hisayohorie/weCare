@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524204530) do
+ActiveRecord::Schema.define(version: 20160525172707) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(version: 20160524204530) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "phone_number"
+    t.string   "address"
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -70,12 +73,9 @@ ActiveRecord::Schema.define(version: 20160524204530) do
     t.datetime "updated_at"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "address"
     t.string   "photo"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
-    t.float    "longitude"
-    t.float    "latitude"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
