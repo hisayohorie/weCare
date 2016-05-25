@@ -1,4 +1,8 @@
 <h1>Profiles#index</h1>
+
+
+<div id= "map" data-latitude= "<%= @user.latitude.to_f %>" data-longitude="<%=@user.longitude.to_f%>"></div>
+
 <% if @profiles %>
   <% @profiles.each do |p| %>
     <li>
