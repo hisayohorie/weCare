@@ -1,11 +1,12 @@
 
 <div class = "homepage_pic">
   <h1>WeRoboCare your loved ones</h1>
+</div>
+
   <div class = "search">
     <%= form_tag profiles_path, method: :get do %>
-      <%= label_tag :search, params[:search] %>
+      <%= label_tag :Location, params[:search] %>
       <%= text_field_tag :search%>
       <%= submit_tag "Search robositters near me", id: "search_button" %>
     <% end %>
   </div>
-</div>

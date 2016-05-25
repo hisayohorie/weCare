@@ -43,3 +43,39 @@ phone_number: 666666666,
 address: '220 King St W, Suite 200, Toronto, ON M5H 1K4'
 
 )
+
+
+
+Profile.create!(
+user_id: User.last.id,
+age: 24,
+description: "Smart and funny",
+exp_num: 2,
+education: "Highschool dropout",
+language: "Spanish",
+availability: "Part-time",
+travel_propensity: 20,
+transportation: "public transportation",
+pets: false,
+phone_number: 123123123,
+address: '100 King St W, Suite 200, Toronto, ON M5H 1K4'
+
+)
+
+
+
+Profile.create!(
+user_id: User.id(3),
+age: 40,
+description: "nice and caring",
+exp_num: 10,
+education: "Ph.D in chemistry",
+language: "English",
+availability: "Full-time",
+travel_propensity: 50,
+transportation: "car",
+pets: true,
+phone_number: 444444444,
+address: '200 Queen St W, Suite 200, Toronto, ON M5H 1K4'
+
+)

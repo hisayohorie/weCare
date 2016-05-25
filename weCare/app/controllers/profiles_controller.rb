@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
 
 
   def index
-      if params[:search]
+      if params[:search] 
         @profiles = Profile.near(params[:search])
         # @profiles =[]
         # Profile.near(params[:search]).each do |p|
