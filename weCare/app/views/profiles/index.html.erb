@@ -1,13 +1,13 @@
 <h1>Profiles#index</h1>
 
 
-<div id= "map" data-latitude= "<%= @user.latitude.to_f %>" data-longitude="<%=@user.longitude.to_f%>"></div>
+<div id= "map" data-latitude= "<%= @profile.latitude.to_f %>" data-longitude="<%=@profile.longitude.to_f%>"></div>
 
 <% if @profiles %>
   <% @profiles.each do |p| %>
     <li>
         <%= p.age %>
-        <%= p.display_distance_to(p.user).round(2)%><p>kms away</p>
+        <%= p.display_distance_to(params[:search]).round(2)%><p>kms away</p>
     </li>
   <%end%>
 <%end%>

@@ -8,7 +8,6 @@ class ProfilesController < ApplicationController
         # @profiles =[]
         # Profile.near(params[:search]).each do |p|
         #   @profiles << p.profile
-          @profiles.compact!
       else
        @profiles = Profile.all
      end
