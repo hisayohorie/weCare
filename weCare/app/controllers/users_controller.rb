@@ -14,7 +14,7 @@ end
 #           u.profile
 #         end
 #     end
-# end
+end
 
   def create
    @user = User.new(user_params)
