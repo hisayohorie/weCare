@@ -3,11 +3,17 @@ class ProfilesController < ApplicationController
 
 
   def index
-      if params[:search]
-        @profiles = Profile.near(params[:search])
-        # @profiles =[]
-        # Profile.near(params[:search]).each do |p|
-        #   @profiles << p.profile
+      @user_location = params[:search]
+
+      if @user_location
+        @location = Geocoder.search(@user_location)
+        @location_result = @location.first.geometry["location"]
+        @lat = @location_result["lat"]
+        @lng = @location_result["lng"]
+
+
+
+        @profiles = Profile.near(@user_location)
       else
        @profiles = Profile.all
      end

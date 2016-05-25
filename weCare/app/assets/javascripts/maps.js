@@ -1,6 +1,4 @@
 $(document).on('ready', function(){
-
-
     function initMap(){
 
 
