@@ -1,20 +1,22 @@
 $(document).on('ready', function(){
     function initMap(){
 
+      var locationDataLat = $('#map').attr("data-latitude");
+      var locationDataLng = $('#map').attr("data-longitude");
 
-    var mapPlaceholder = $("#map");
-    var latLong = {lat: mapPlaceholder.data('latitude'), lng: mapPlaceholder.data('longitude')};
-    var map = new google.maps.Map(mapPlaceholder[0], {
-    center: latLong,
-    zoom: 12
-    });
+    $.ajax({
+      url: "/profiles",
+      method: "get",
+      data: {"locationDataLat": locationDataLat , "locationDataLng": locationDataLng },
+      dataType: "script"
 
-    var marker = new google.maps.Marker({
-    position: latLong,
-    map: map,
-    title: 'Hello World!'
-    });
-    }
+      });
+    };
+
+
+
+
+
 
     initMap();
 });

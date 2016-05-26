@@ -4,18 +4,19 @@ class ProfilesController < ApplicationController
 
   def index
       @user_location = params[:search]
-
       if @user_location
         @location = Geocoder.search(@user_location)
         @location_result = @location.first.geometry["location"]
         @lat = @location_result["lat"]
         @lng = @location_result["lng"]
-
-
-
         @profiles = Profile.near(@user_location)
+
       else
        @profiles = Profile.all
+     end
+     respond_to do |format|
+       format.html
+       format.js
      end
   end
 
