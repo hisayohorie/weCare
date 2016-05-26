@@ -11,15 +11,22 @@ class ProfilesController < ApplicationController
         @lat = @location_result["lat"]
         @lng = @location_result["lng"]
 
-        @profiles = Profile.near(@user_location)
 
-      else
-       @profiles = Profile.all
-     end
-     respond_to do |format|
-       format.html
-       format.js
-     end
+        @nearby_profiles = Profile.near([@lat, @lng], 7, units: :km)
+
+
+      elsif params[:latitude] && params[:longitude]
+         @latitude = params[:latitude]
+         @longitude = params[:longitude]
+         @nearby_profiles = Profile.near([@latitude, @longitude], 7, units: :km)
+
+      # else
+      #    @profiles = Profile.all
+      end
+         respond_to do |format|
+         format.html
+         format.js
+      end
   end
 
 

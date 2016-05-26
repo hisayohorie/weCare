@@ -1,3 +1,4 @@
+<div class= "show_nearby_babysitters">
 <h1>Profiles#index</h1>
 
 
@@ -6,11 +7,14 @@
 
 
 
-<% if @profiles %>
-  <% @profiles.each do |p| %>
+<% if @nearby_profiles %>
+  <% @nearby_profiles.each do |p| %>
     <li>
-        <%= p.age %>
-        <%= p.display_distance_to(params[:search]).round(2)%><p>kms away</p>
+        <%= image_tag p.user.photo %>
+        <%= p.age %>years old
+        <%= p.display_distance_to(params[:search]).round(2)%>kms away
+        <%= button_to 'more info', profile_path(@profile)%>
     </li>
   <%end%>
 <%end%>
+</div>

@@ -1,2 +1,26 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<h1>Robositters#show</h1>
+<div class="robositter_profile">
+  <%= image_tag @profile.user.photo %>
+
+<h3>About Me</h3>
+    <p><%= @profile.description %></p>
+    <p><%= @profile.age %>years old</p>
+    <p>Experience: <%= @profile.exp_num %>years of experience</p>
+    <p>Rate: $<%= @profile.rate %>/hr</p>
+    <p>Availbility: <%= @profile.availability %>/hr</p>
+    <p>Education: <%= @profile.education %></p>
+    <p>Language: <%= @profile.language %></p>
+    <p>Transpotation: <%= @profile.transportation %></p>
+    <p>Comfortable with pets: <%= @profile.pets %></p>
+    <p>Phone: <%= @profile.phone_number %></p>
+
+</div>
+
+<div class="babysitter_booking">
+
+  Book this babysitter!
+
+
+
+
+</div>

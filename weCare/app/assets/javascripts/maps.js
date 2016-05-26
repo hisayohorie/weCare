@@ -4,17 +4,15 @@ $(document).on('ready', function(){
       var locationDataLat = $('#map').attr("data-latitude");
       var locationDataLng = $('#map').attr("data-longitude");
 
+
     $.ajax({
-      url: "/profiles",
+      url: "/profiles?latitude="+locationDataLat+"&longitude="+locationDataLng,
       method: "get",
       data: {"locationDataLat": locationDataLat , "locationDataLng": locationDataLng },
       dataType: "script"
 
       });
     };
-
-
-
 
 
 

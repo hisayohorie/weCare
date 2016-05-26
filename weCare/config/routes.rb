@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   root "pages#home"
   resources :users do
-    resources :profiles
+    resources :profiles, except: [:index, :show]
   end
-  resources :profiles, only: [:index]
+  resources :profiles, only: [:index, :show]
   # resources :services
   resources :bookings do
     resources :reviews

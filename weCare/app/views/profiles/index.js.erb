@@ -1,15 +1,20 @@
-console.log("it works")
+
 var locationDataLat = $('#map').attr("data-latitude");
 var locationDataLng = $('#map').attr("data-longitude");
+console.log(locationDataLat);
 
     var mapPlaceholder = $("#map");
     var latLong = {lat: mapPlaceholder.data('latitude'), lng: mapPlaceholder.data('longitude')};
     var map = new google.maps.Map(mapPlaceholder[0], {
     center: latLong,
-    zoom: 12
+    zoom: 10
     });
-
-<% @profiles.each do |profile| %>
+var marker = new google.maps.Marker({
+  position: {lat: parseFloat(locationDataLat), lng: parseFloat(locationDataLng)},
+  map: map,
+  title: "search location"
+});
+<% @nearby_profiles.each do |profile| %>
 var marker = new google.maps.Marker({
   position: {lat: <%=profile.latitude%>, lng: <%=profile.longitude%>},
   map: map,

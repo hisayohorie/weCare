@@ -1,7 +1,7 @@
 class Profile < ActiveRecord::Base
   has_many :services
   has_many :reviews
-  has_one :user
+  belongs_to :user
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
