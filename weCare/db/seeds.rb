@@ -14,6 +14,7 @@ require 'faker'
 #   parent.email:Faker::Email.email
 #   parent.photo:Faker::Avatar.image
 # end})
+
 # User.destroy_all
 # Profile.destroy_all
 #
@@ -39,57 +40,41 @@ require 'faker'
 #  sleep 2
 # end
 #
-#
-#
-#
-# Profile.create!(
-# user_id: User.first.id,
-# age: 56,
-# description: "Fun and kind",
-# exp_num: 4,
-# education: "Havard educated",
-# language: "French",
-# availability: "Full-time",
-# travel_propensity: 30,
-# transportation: "car",
-# pets: true,
-# phone_number: 666666666,
-# address: '220 King St W, Suite 200, Toronto, ON M5H 1K4'
-#
-# )
-#
-#
-#
-# Profile.create!(
-# user_id: User.last.id,
-# age: 24,
-# description: "Smart and funny",
-# exp_num: 2,
-# education: "Highschool dropout",
-# language: "Spanish",
-# availability: "Part-time",
-# travel_propensity: 20,
-# transportation: "public transportation",
-# pets: false,
-# phone_number: 123123123,
-# address: '100 King St W, Suite 200, Toronto, ON M5H 1K4'
-#
-# )
-#
-#
-#
-# Profile.create!(
-# user_id: User.first.id,
-# age: 40,
-# description: "nice and caring",
-# exp_num: 10,
-# education: "Ph.D in chemistry",
-# language: "English",
-# availability: "Full-time",
-# travel_propensity: 50,
-# transportation: "car",
-# pets: true,
-# phone_number: 444444444,
-# address: '200 Queen St W, Suite 200, Toronto, ON M5H 1K4'
-#
-# )
+
+User.destroy_all
+Profile.destroy_all
+
+addresses =[
+  "220 King St W, Suite 200, Toronto, ON M5H 1K4",
+  "100 King St W, Suite 200, Toronto, ON M5H 1K4","27 King's College Cir, Toronto, ON M5S2",
+  "224 Adelaide St W, Toronto", "719 College Street Toronto, ON M6G",
+  "372 College Street, Toronto",
+  "186 Ossington Ave, Toronto, ON M6J 2Z7",
+  "572 College St, Toronto, ON M6G 1B3",
+  "735 Queen St E, Toronto, ON M4M 1H2",
+  "2804 Dundas St W, Toronto, ON M6P 1Y5",
+  "722 College St, Toronto, ON M6G 1C5",
+  "9 Ossington Ave, Toronto, ON M6J 2Y8"
+]
+
+
+10.times do |n|
+ u = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Number.number(4),photo: Faker::Avatar.image)
+ sleep 2
+
+ u.create_profile(
+   age: 56,
+   description: "Fun and kind",
+   exp_num: 4,
+   education: "Havard educated",
+   language: "French",
+   availability: "Full-time",
+   travel_propensity: 30,
+   transportation: "car",
+   pets: true,
+   phone_number: 666666666,
+   address: addresses[n]
+ )
+ sleep 2
+end
+>>>>>>> 5fdbae29605c0f65a56fde79070c1d963ca698a6
