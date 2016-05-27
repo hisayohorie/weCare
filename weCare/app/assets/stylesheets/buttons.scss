@@ -1,0 +1,75 @@
+.btn,
+.button,
+button,
+input[type="submit"] {
+  transition: .3s background-color ease, .3s border-color ease, .3s opacity ease;
+  border: 1px solid transparent;
+  background-color: $orange;
+  -webkit-appearance: none;
+  text-decoration: none;
+  display: inline-block;
+  font-family: RobotoLt;
+  border-radius: 3px;
+	text-align: center;
+	font-weight: bold;
+  padding: 4px 13px;
+  line-height: 30px;
+	font-size: 14px;
+	cursor: pointer;
+	color: #fff;
+	opacity: 1;
+	outline: 0;
+
+	&:hover {
+    background-color: darken($orange, 10);
+		color: #fff;
+	}
+
+	&.wide {
+		width: 100%;
+	}
+
+	&.outline {
+		border: 1px solid $lightGrey;
+		color: $titleColor;
+		background-color: #fff;
+
+		&:not([disabled="disabled"]):hover {
+			border-color: darken(#fff, 30%);
+			background-color: #fff;
+		}
+	}
+}
+
+// Legacy Class Support (TODO Cleanup: Should live inside .btn above)
+.btn-outline {
+	@extend button;
+	border: 1px solid $lightGrey;
+	color: $titleColor;
+	background-color: #fff;
+
+	&:not([disabled="disabled"]):hover {
+		border-color: darken(#fff, 30%);
+		color: $titleColor;
+		background-color: #fff;
+	}
+}
+
+.btn-grey {
+	transition: .3s background-color ease;
+	background-color: $fontLight;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 14px 25px;
+	border-radius: 7px;
+	font-weight: 900;
+	font-size: 0.8em;
+	cursor: pointer;
+	border: none;
+	color: #fff;
+
+	&:hover {
+		background-color: lighten(#94989f, 10);
+		color: #fff;
+	}
+}
