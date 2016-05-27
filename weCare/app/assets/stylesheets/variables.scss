@@ -2,8 +2,15 @@
 $font-stack:             Helvetica, sans-serif;
 
 // Color Vairables
+$white:                  #fff;
 $green:                  #AAF200;
 $orange:                 #FF8000;
+$medGray:                #94989f; // Regular
 $lightGrey: 	           #cccccc;
 $greyTrans:              rgba(204, 204, 204, 0.5);
 $black:                  #282828;
+
+// Font Color Variables
+$titleColor:             $black;
+$bodyColor:              $black;
+$fontLight:            $medGray;
