@@ -1,0 +1,22 @@
+// A file for common classes and mixins to use across the app
+
+.has-overlay {
+  position: relative;
+
+  &:after {
+    background-color: #33353A;
+    position: absolute;
+    opacity: 0.5;
+    content: '';
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+
+  .row {
+    position: relative;
+    z-index: 2;
+  }
+}
