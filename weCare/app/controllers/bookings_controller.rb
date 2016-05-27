@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
       if @booking.update_attributes(booking_params)
         redirect_to @booking
       else
-        renser :edit
+        render :edit
       end
     end
   end

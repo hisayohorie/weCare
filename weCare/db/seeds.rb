@@ -57,6 +57,20 @@ addresses =[
   "9 Ossington Ave, Toronto, ON M6J 2Y8"
 ]
 
+bookingTime =[
+  DateTime.new(2016,7,1,15,00)
+  DateTime.new(2016,7,1,16,00)
+  DateTime.new(2016,7,1,17,00)
+  DateTime.new(2016,7,2,15,00)
+  DateTime.new(2016,7,2,16,00)
+  DateTime.new(2016,7,2,17,00)
+  DateTime.new(2016,7,3,15,00)
+  DateTime.new(2016,7,3,16,00)
+  DateTime.new(2016,7,3,17,00)
+  DateTime.new(2016,7,4,15,00)
+]
+
+date
 
 10.times do |n|
  u = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Number.number(4),photo: Faker::Avatar.image)
@@ -77,3 +91,21 @@ addresses =[
  )
  sleep 2
 end
+
+b1 = Booking.create!(
+  date_time:
+  address: "100 King Street West Toronto",
+  num_of_hours: 3
+)
+
+b2 = Booking.create!(
+  date_time: Time.now + 2.days,
+  address: "200 King Street West Toronto",
+  num_of_hours: 3
+)
+
+b3 = Booking.create!(
+  date_time: Time.now + 3.days,
+  address: "300 King Street West Toronto",
+  num_of_hours: 3
+)
