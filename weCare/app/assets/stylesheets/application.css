@@ -11,12 +11,6 @@
  * file per style scope.
  *
 
-
  *= require_self
+ *= require main
  */
-
- @import "bourbon";
- // @import "neat";
- @import "pages";
- @import "users";
- @import "profiles"

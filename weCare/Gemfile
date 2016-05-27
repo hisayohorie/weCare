@@ -26,7 +26,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sorcery'
 
 gem 'bourbon'
-
 gem 'neat'
 
 gem 'validates_email_format_of'
