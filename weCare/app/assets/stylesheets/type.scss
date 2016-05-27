@@ -15,19 +15,19 @@ h1, h2, h3, h4, h5, h6,
 
 h1,
 .alpha {
-    font-family: "RobotoMed";
+    font-family: RobotoMed;
     font-size: 40px;
 }
 
 h2,
 .beta {
-    font-family: "RobotoMed";
+    font-family: RobotoMed;
     font-size: 28px;
 }
 
 h3,
 .gamma {
-    font-family: "RobotoReg";
+    font-family: RobotoReg;
     font-size: 22px;
 }
 
@@ -37,7 +37,7 @@ h4,
 
 h5,
 .epsilon {
-    font-family: "RobotoBold";
+    font-family: RobotoBold;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 11px;
@@ -59,7 +59,7 @@ p {
 
 p,
 li {
-    font-family: "RobotoReg";
+    font-family: RobotoReg;
     line-height: 1.5;
     font-size: 14px;
     color: $bodyColor;
@@ -120,7 +120,7 @@ ol {
 .button {
     border: 2px solid transparent;
     transition: all 0.3s ease;
-    font-family: "RobotoBold";
+    font-family: RobotoBold;
     text-transform: uppercase;
     display: inline-block;
     letter-spacing: 2px;
