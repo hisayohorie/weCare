@@ -12,31 +12,34 @@ html, body {
 }
 
 body {
+  background-color: #fff;
   font: 100% $font-stack;
+  position: relative;
   color: $black;
-  background-color: white;
   margin: 0;
 }
 
 h1 {
-  @include outer-container();
   color: $green;
 }
+
 .nav {
   background-color: $orange;
-  margin: o;
-  line-height: 20px;
-  overflow: hidden;
-
+  position: absolute;
+  padding: 10px 0;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include clearfix;
 
   ul {
-    list-style: none;
-    display: inline-flex;
     justify-content: flex-end;
-    // width: 100%;
-    float: right;
+    display: inline-flex;
     font-size: 0.8rem;
+    list-style: none;
     overflow: hidden;
+    float: right;
     margin:0;
   }
 
@@ -45,8 +48,9 @@ h1 {
     text-decoration: none;
     color: white;
     margin: 2px 10px;
-      }
-  span{
+  }
+
+  span {
     line-height: 20px;
   }
 
@@ -58,7 +62,6 @@ h1 {
     padding-right: 20px;
     padding: 5px 5px;
   }
-
 }
 
 
@@ -108,32 +111,26 @@ h1 {
   left: 10%;
 }
 
-.homepage_pic{
+
+
+
+[data-slides] {
   background-image: url("robocare.jpg");
-  width: 100%;
-  height: 100%;
-  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
+  background-size: cover;
+  @include transition(background-image 1s linear);
+  text-align: center;
+  padding: 280px 0 100px;
+  height: 100vh;
+  width: 100%;
   margin: 0;
-  h1{
-    text-align: center;
-    left: 50%;
-    margin: auto;
-    position: absolute;
-    top: 70%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+
+  h1 {
+    margin-bottom: 40px;
   }
-  .search{
-    text-align: center;
-    left: 50%;
-    margin: auto;
-    position: absolute;
-    top: 80%;
-    transform: translate(-50%, -50%);
-    width: 100%;
 
-
+  .search {
 
   }
 }
