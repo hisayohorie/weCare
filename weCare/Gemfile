@@ -27,6 +27,7 @@ gem 'sorcery'
 
 gem 'bourbon'
 gem 'neat'
+gem 'font-awesome-rails'
 
 gem 'validates_email_format_of'
 
