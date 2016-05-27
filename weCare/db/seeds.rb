@@ -57,23 +57,47 @@ addresses =[
   "9 Ossington Ave, Toronto, ON M6J 2Y8"
 ]
 
+bookingTime =[
+  DateTime.new(2016,6,1,15,00),
+  DateTime.new(2016,6,1,16,00),
+  DateTime.new(2016,6,1,17,00),
+  DateTime.new(2016,6,2,15,00),
+  DateTime.new(2016,6,2,16,00),
+  DateTime.new(2016,6,2,17,00),
+  DateTime.new(2016,6,3,15,00),
+  DateTime.new(2016,6,3,16,00),
+  DateTime.new(2016,6,3,17,00),
+  DateTime.new(2016,6,4,15,00)
+]
 
-10.times do |n|
- u = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Number.number(4),photo: Faker::Avatar.image)
- sleep 2
 
- u.create_profile(
-   age: 56,
-   description: "Fun and kind",
-   exp_num: 4,
-   education: "Havard educated",
-   language: "French",
-   availability: "Full-time",
-   travel_propensity: 30,
-   transportation: "car",
-   pets: true,
-   phone_number: 666666666,
-   address: addresses[n]
- )
- sleep 2
-end
+  10.times do |n|
+     babysitter = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Number.number(4),photo: Faker::Avatar.image)
+     sleep 2
+
+     parent = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Number.number(4),photo: Faker::Avatar.image)
+
+     babysitter.create_profile!(
+       age: 40,
+       description: "Fun and kind",
+       exp_num: 4,
+       education: "Harvard educated",
+       language: "French",
+       availability: "Full-time",
+       travel_propensity: 30,
+       transportation: "car",
+       pets: true,
+       phone_number: 666666666,
+       address: addresses[n]
+     )
+     sleep 2
+
+     parent.bookings.create!(
+     date_time:bookingTime[n],
+     address: "100 College Street, Toronto",
+     num_of_hours:3,
+     service_id:1,
+     confirmation:true
+     )
+     sleep 2
+  end
