@@ -7,15 +7,6 @@
   box-sizing: border-box;
 }
 
-
-$font-stack: Helvetica, sans-serif;
-$green: #AAF200;
-$orange: #FF8000;
-$light_grey: 	#cccccc;
-$grey_trans: rgba(204, 204, 204, 0.5);
-$black: #282828;
-
-
 html, body {
   height: 100%;
 }
@@ -28,6 +19,7 @@ body {
 }
 
 h1 {
+  @include outer-container();
   color: $green;
 }
 .nav {
