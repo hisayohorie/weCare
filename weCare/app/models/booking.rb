@@ -7,7 +7,7 @@ class Booking < ActiveRecord::Base
   validate :valid_date_range, :future_date_only
 
   def valid_date_range
-      if !date_time.blank? && date_time> Date.today + 10.days
+      if !date_time.blank? && date_time> Date.today + 30.days
         errors.add(:date_time, "Bookings can only be made 10 days in advance.")
       end
     end
