@@ -66,13 +66,19 @@ h1 {
     padding-right: 20px;
     padding: 5px 5px;
   }
+
 }
+
+
 
 .home_nav {
   display: inline-block;
   position: relative;
   left: 10px;
   font-size: 0.8rem;
+  overflow: hidden;
+  float: left;
+
   a{
     color: $green;
   }
@@ -136,8 +142,11 @@ h1 {
     width: 100%;
 
 
+
   }
 }
+
+
 
 .show_nearby_babysitters {
   text-align: center;

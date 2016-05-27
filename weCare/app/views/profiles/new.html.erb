@@ -1,2 +1,46 @@
-<h1>Profiles#new</h1>
-<p>Find me in app/views/profiles/new.html.erb</p>
+<div class = "caregiver_form">
+  <h1>CareGiver Application Form:</h1>
+    <%= form_for Profile.new do |f| %>
+    <p> Welcome, <%= current_user.first_name %> <%= current_user.last_name%></p>
+
+
+    <p><%= f.label :description %></p>
+    <p><%= f.text_field :description %></p>
+
+    <p><%= f.label :age %></p>
+    <p><%= f.text_field :age %></p>
+
+    <p><%= f.label :number_of_experience %></p>
+    <p><%= f.text_field :exp_num %></p>
+
+    <p><%= f.label :language %></p>
+    <p><%= f.text_field :language %></p>
+
+    <p><%= f.label :Rate %></p>
+    <p>$<%= f.number_field :rate %>/hr</p>
+
+    <p><%= f.label :phone_number %></p>
+    <p><%= f.text_field :phone_number %></p>
+
+    <p><%= f.label :availability %></p>
+    <p><%= f.text_field :availability %></p>
+
+    <p><%= f.label :education %></p>
+    <p><%= f.text_field :education %></p>
+
+    <p><%= f.label :address %></p>
+    <p><%= f.text_field :address %></p>
+
+    <p><%= f.label :distance_willing_to_travel(km) %></p>
+    <p><%= f.number_field :travel_propensity %></p>
+
+    <p><%= f.label :transportation %></p>
+    <p><%= f.text_field :transportation %></p>
+
+    <p><%= f.label :comfortability_with_pets %></p>
+    <p><%= f.check_box :pets %></p>
+
+    <%= f.submit %>
+
+    <% end %>
+</div>

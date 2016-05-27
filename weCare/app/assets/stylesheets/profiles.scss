@@ -14,10 +14,19 @@
   border: 1px solid $orange;
   right: 20%;
   left: 20%;
-  top: 50%;
+  top: 30%;
 
 }
 
 .babysitter_profile {
+  text-align: center;
+  // overflow: hidden;
+
+}
+.photo{
+  float: left;
+}
+
+.caregiver_form {
   text-align: center;
 }

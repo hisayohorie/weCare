@@ -2,7 +2,6 @@
 
   <%= form_for Booking.new do |f| %>
 
-
     <p><%= f.label :date_time %></p>
     <p><%= f.datetime_select :date_time %></p>
 
@@ -10,7 +9,7 @@
     <p><%= f.text_field :address %></p>
 
     <p><%= f.label :number_of_hours %></p>
-    <p><%= f.text_field :num_of_hours %></p>
+    <p><%= f.number_field :num_of_hours %></p>
 
     <%= f.submit %>
 

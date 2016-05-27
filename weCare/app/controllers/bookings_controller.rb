@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :ensure_logged_in
+
   def index
     @bookings = Booking.all
   end
@@ -12,14 +14,23 @@ class BookingsController < ApplicationController
   end
 
   def create
-    if current_user
-      @booking = Booking.new
-        if @booking.save
-          redirect_to @booking
-        else
-          render :new, alert: "Please login."
-        end
-    end
+    @booking = @profile.booking.build(booking_params)
+    @booking.user = current_user
+
+      if @booking.save
+        redirect_to root_url, notice: "Reservation created successfully!"
+      else
+        render 'new'
+      end
+
+    # if current_user
+    #   @booking = Booking.new
+    #     if @booking.save
+    #       redirect_to @booking
+    #     else
+    #       render :new, alert: "Please login."
+    #     end
+    # end
   end
 
   def edit
@@ -32,7 +43,7 @@ class BookingsController < ApplicationController
       if @booking.update_attributes(booking_params)
         redirect_to @booking
       else
-        renser :edit
+        render :edit
       end
     end
   end
@@ -40,6 +51,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
+    redirect_to root_url
   end
 
 private
