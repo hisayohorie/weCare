@@ -1,0 +1,19 @@
+<div class= "booking_form">
+
+  <%= form_for Booking.new do |f| %>
+
+
+    <p><%= f.label :date_time %></p>
+    <p><%= f.datetime_select :date_time %></p>
+
+    <p><%= f.label :address %></p>
+    <p><%= f.text_field :address %></p>
+
+    <p><%= f.label :number_of_hours %></p>
+    <p><%= f.text_field :num_of_hours %></p>
+
+    <%= f.submit %>
+
+  <% end %>
+
+</div>

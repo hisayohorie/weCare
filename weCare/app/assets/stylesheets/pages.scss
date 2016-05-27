@@ -84,10 +84,13 @@ h1 {
   position: absolute;
   z-index: 1;
   width: 60%;
+  padding-bottom: 5%;
   text-align: center;
   background-color: white;
   border: 1px solid $orange;
-
+  right: 20%;
+  left: 20%;
+  margin-top: 10px;
 }
 
 
@@ -102,7 +105,9 @@ h1 {
 
 #map {
   height: 400px;
-  width: 400px;
+  width: 80%;
+  right: 10%;
+  left: 10%;
 }
 
 .homepage_pic{
@@ -136,5 +141,15 @@ h1 {
 
 .show_nearby_babysitters {
   text-align: center;
+.nearby_babysitters{
+  list-style-type: none;
+}
+}
+
+
+.close {
+  background-color: $orange;
+  color: $green;
+  border: 1px solid $orange;
 
 }

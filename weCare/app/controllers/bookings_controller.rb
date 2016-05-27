@@ -14,10 +14,11 @@ class BookingsController < ApplicationController
   def create
     if current_user
       @booking = Booking.new
-    if @booking.save
-      redirect_to @booking
-    else
-      render :new, alert: "Please login."
+        if @booking.save
+          redirect_to @booking
+        else
+          render :new, alert: "Please login."
+        end
     end
   end
 
@@ -40,10 +41,10 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
   end
-end
 
 private
 
 def booking_params
   params.require(:booking).permit(:user_id, :date_time, :address, :num_of_hours, :service_id)
+end
 end

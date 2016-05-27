@@ -1,20 +1,21 @@
 <div class= "show_nearby_babysitters">
-<h1>Profiles#index</h1>
+<h1>Robositters nearby your search:</h1>
 
 
 
 <div id= "map" data-latitude= "<%= @lat.to_f %>" data-longitude="<%=@lng.to_f%>"></div>
 
 
-
-<% if @nearby_profiles %>
-  <% @nearby_profiles.each do |p| %>
-    <li>
-        <%= image_tag p.user.photo %>
-        <%= p.age %>years old
-        <%= p.display_distance_to(params[:search]).round(2)%>kms away
-        <%= button_to 'more info', profile_path(@profile)%>
-    </li>
+  <div class= "nearby_babysitters">
+  <% if @nearby_profiles %>
+    <% @nearby_profiles.each do |p| %>
+      <li>
+          <%= image_tag p.user.photo %>
+          <%= p.age %>years old
+          <%= p.display_distance_to(params[:search]).round(2)%>kms away
+          <%= button_to 'more info', profile_path(p), method: :get%>
+      </li>
+    <%end%>
   <%end%>
-<%end%>
+  </div>
 </div>
