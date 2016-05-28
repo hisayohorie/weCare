@@ -17,12 +17,10 @@ end
 # end
 
   def create
-   @user = User.new(user_params)
-   if @user.save
-     login(params[:user][:email], params[:user][:password])
+   if @user = login(params[:email], params[:password])
      redirect_to root_path
    else
-     render 'new'
+     render :new
    end
  end
 
