@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "pages#home"
   get 'sign_up', to: 'users#new', as: :sign_up
   get 'log_in', to: 'sessions#new', as: :log_in
-  post 'create', to: 'users#create'
+  post 'sessions', to: 'sessions#create'
   delete 'log_out', to: 'sessions#destroy', as: :log_out
 
 

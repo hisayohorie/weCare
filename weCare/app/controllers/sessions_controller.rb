@@ -6,15 +6,13 @@ class SessionsController < ApplicationController
 
  def create
    if @user = login(params[:email], params[:password])
-
-     redirect_back_or_to(:users, notice: "Welcome back!")
+     redirect_back_or_to root_url
    else
+     @user = User.new
      flash.now[:alert] = 'E-mail and/or password is incorrect.'
      render 'new'
    end
-
  end
-
 
  def destroy
   #  logout
