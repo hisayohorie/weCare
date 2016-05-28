@@ -17,7 +17,7 @@
 
       <% if current_user %>
         <li> Welcome, <%= current_user.first_name %></li>
-        <li><%= link_to 'Become A Care Giver', new_user_profile_path(current_user)%></li>
+        <li id = "become_caregiver"><%= link_to 'Become A Care Giver', new_user_profile_path(current_user)%></li>
         <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
 
       <% else %>
@@ -27,6 +27,7 @@
     </ul>
   </div>
 
+<% if current_user.nil? %>
   <div class= "login_modal">
     <button type="button" class="close">x</button>
     <%= render partial: "sessions/login"%>
@@ -36,7 +37,7 @@
     <button type="button" class="close">x</button>
     <%= render partial: "users/signup"%>
   </div>
-
+<% end %>
 
 <%= yield %>
 

@@ -74,8 +74,11 @@ h1 {
   overflow: hidden;
   float: left;
 
-  a{
+  a {
     color: $green;
+  }
+  #become_caregiver {
+    border: 1px solid white;
   }
 }
 

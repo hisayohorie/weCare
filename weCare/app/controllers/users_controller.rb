@@ -35,7 +35,7 @@ def edit
 end
 
 def update
-  @user = User.find(current_user)
+  @user = current_user
   if @user.update_attributes(user_params)
     redirect_to current_user
   else
