@@ -12,13 +12,14 @@ console.log(locationDataLat);
 var marker = new google.maps.Marker({
   position: {lat: parseFloat(locationDataLat), lng: parseFloat(locationDataLng)},
   map: map,
-  title: "search location"
+  title: "Your location"
 });
 <% @nearby_profiles.each do |profile| %>
 var marker = new google.maps.Marker({
   position: {lat: <%=profile.latitude%>, lng: <%=profile.longitude%>},
-  map: map,
+  // map: map,
   title: 'Hello World!'
 });
+  marker.setMap(map);
 
 <% end %>

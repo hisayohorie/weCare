@@ -4,7 +4,9 @@ data-slides='[
   "assets/robocare.jpg",
   "assets/robocare2.jpg",
   "assets/robocare3.jpg",
-  "assets/robocare4.jpg"
+  "assets/robocare4.jpg",
+  "assets/robocare5.jpg",
+  "assets/robocare6.jpg"
 ]'
 >
   <div class="row">
@@ -19,3 +21,82 @@ data-slides='[
     </div>
   </div>
 </section>
+
+
+<div class="flex-boxes">
+  <a href="javascript:void(0)" class="flex-box flex-box-big">
+    <img src="https://raw.githubusercontent.com/thoughtbot/refills/49db8c0f2f8066c2c3a275781503fe3303a1a9fc/source/images/placeholder.png" alt="">
+    <h1 class="flex-title">A Wide Flex Box Item</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad nostrum, libero! Laborum distinctio necessitatibus voluptates eaque officiis, unde illo, earum voluptatum rerum, reiciendis ipsa ex dolorem a dicta, maxime aliquam.</p>
+  </a>
+  <a href="javascript:void(0)" class="flex-box">
+    <img src="https://raw.githubusercontent.com/thoughtbot/refills/49db8c0f2f8066c2c3a275781503fe3303a1a9fc/source/images/placeholder.png" alt="">
+    <h1 class="flex-title">Flex Box Item</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestiae fugiat tenetur fugit atque dignissimos, fugiat natus vitae.</p>
+  </a>
+  <a href="javascript:void(0)" class="flex-box">
+    <img src="https://raw.githubusercontent.com/thoughtbot/refills/49db8c0f2f8066c2c3a275781503fe3303a1a9fc/source/images/placeholder.png" alt="">
+    <h1 class="flex-title">A Flex Box Item</h1>
+    <p>Lorem adipisicing elit. Voluptas consectetur tempora quis nam, officia tenetur blanditiis in illo dolor?</p>
+  </a>
+</div>
+
+
+
+
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-logo">
+    <img src="https://raw.githubusercontent.com/thoughtbot/refills/49db8c0f2f8066c2c3a275781503fe3303a1a9fc/source/images/placeholder.png" alt="Logo image">
+  </div>
+  <div class="footer-links">
+    <ul>
+      <li><h3>Content</h3></li>
+      <li><a href="javascript:void(0)">About</a></li>
+      <li><a href="javascript:void(0)">Contact</a></li>
+      <li><a href="javascript:void(0)">Products</a></li>
+    </ul>
+    <ul>
+      <li><h3>Follow Us</h3></li>
+      <li><a href="javascript:void(0)">Facebook</a></li>
+      <li><a href="javascript:void(0)">Twitter</a></li>
+      <li><a href="javascript:void(0)">YouTube</a></li>
+    </ul>
+    <ul>
+      <li><h3>Legal</h3></li>
+      <li><a href="javascript:void(0)">Terms and Conditions</a></li>
+      <li><a href="javascript:void(0)">Privacy Policy</a></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <p>Disclaimer area lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, nostrum repudiandae saepe.</p>
+</footer>
+
+<script>
+$(document).ready(function() {
+  /*! slides | https://gist.github.com/mhulse/66bcbb7099bb4beae530 */
+  (function($) {
+
+    'use strict';
+
+    var $slides = $('[data-slides]');
+    var images = $slides.data('slides');
+    var count = images.length;
+    var slideshow = function() {
+      $slides
+        .css('background-image', 'url("' + images[Math.floor(Math.random() * count)] + '")')
+        .show(0, function() {
+          setTimeout(slideshow, 2000);
+        });
+    };
+
+    slideshow();
+
+  }(jQuery));
+
+});
+
+
+</script>

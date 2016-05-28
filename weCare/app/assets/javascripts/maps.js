@@ -1,4 +1,5 @@
 $(document).on('ready', function(){
+  if ($('#map').length > 0){ 
     function initMap(){
 
       var locationDataLat = $('#map').attr("data-latitude");
@@ -13,8 +14,6 @@ $(document).on('ready', function(){
 
       });
     };
-
-
-
     initMap();
+  };
 });
