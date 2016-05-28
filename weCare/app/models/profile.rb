@@ -1,6 +1,7 @@
 class Profile < ActiveRecord::Base
   has_many :services
   has_many :reviews
+  has_many :bookings
   belongs_to :user
 
   geocoded_by :address

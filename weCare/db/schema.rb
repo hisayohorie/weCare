@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160528004055) do
+ActiveRecord::Schema.define(version: 20160528204555) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "date_time"
     t.string   "address"
-    t.integer  "num_of_hours"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "service_id"
     t.boolean  "confirmation"
     t.integer  "profile_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -64,12 +64,9 @@ ActiveRecord::Schema.define(version: 20160528004055) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "infant_care"
-    t.string   "toddler_care"
-    t.string   "tween_care"
-    t.string   "teenage_care"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "category"
   end
 
   create_table "users", force: :cascade do |t|
