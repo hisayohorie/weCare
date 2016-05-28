@@ -11,33 +11,33 @@
 <body>
 
   <div class="nav">
-    <li class = "home_nav"><%= link_to 'WeRoboCare', root_path %></li>
+  <li class = "home_nav"><%= link_to 'WeRoboCare', root_path %></li>
+        <ul class="navbar">
 
-    <ul class="navbar">
+          <% if current_user %>
+            <li>Welcome, <span><%= current_user.first_name %></span></li>
+            <li><%= link_to 'Become A Care Giver', new_user_profile_path(current_user)%></li>
+            <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Sign Up', sign_up_path, class: "signup_button" %></li>
+            <li><%= link_to 'Log In', log_in_path, method: :get, class: "login_button" %></li>
+          <% end %>
+        </ul>
 
-      <% if current_user %>
-        <li> Welcome, <%= current_user.first_name %></li>
-        <li id = "become_caregiver"><%= link_to 'Become A Care Giver', new_user_profile_path(current_user)%></li>
-        <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
 
-      <% else %>
-        <li><%= link_to 'Sign Up', sign_up_path, class: "signup_button" %></li>
-        <li><%= link_to 'Log In', log_in_path, class: "login_button" %></li>
-      <% end %>
-    </ul>
   </div>
+        <% if current_user.nil? %>
+          <div class= "login_modal">
+            <button type="button" class="close">x</button>
+            <%= render partial: "sessions/login"%>
+          </div>
 
-<% if current_user.nil? %>
-  <div class= "login_modal">
-    <button type="button" class="close">x</button>
-    <%= render partial: "sessions/login"%>
-  </div>
+          <div class= "signup_modal">
+            <button type="button" class="close">x</button>
+            <%= render partial: "users/signup"%>
+          </div>
 
-  <div class= "signup_modal">
-    <button type="button" class="close">x</button>
-    <%= render partial: "users/signup"%>
-  </div>
-<% end %>
+        <% end %>
 
 <%= yield %>
 
