@@ -9,6 +9,7 @@
     </ul>
   </div>
 
+<% if @user.profile %>
   <div class="user_profile">
     <ul>
       <li><%= @user.profile.age %></li>
@@ -24,6 +25,8 @@
       <li><%= @user.profile.rate %></li>
     </ul>
   </div>
+<% end %>
+
   <div class = "bookings_you_made">
     <% @user.bookings.each do |b| %>
       <ul>
@@ -34,9 +37,10 @@
         <li><% b.confirmation %></li>
       </ul>
     <% end %>
-
   </div>
 
+
+<% if @user.profile %>
   <div class="booking_request">
     <% @user.profile.bookings.each do |b| %>
       <%= b.user.first_name %><% b.user.last_name %>
@@ -51,3 +55,4 @@
       <% end %>
     <% end %>
   </div>
+<% end %>
