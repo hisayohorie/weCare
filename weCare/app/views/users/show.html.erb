@@ -24,6 +24,18 @@
       <li><%= @user.profile.rate %></li>
     </ul>
   </div>
+  <div class = "bookings_you_made">
+    <% @user.bookings.each do |b| %>
+      <ul>
+        <li><% b.profile.user.first_name %></li>
+        <li><% b.profile.user.last_name %></li>
+        <li><% b.start_time %></li>
+        <li><% b.end_time %></li>
+        <li><% b.confirmation %></li>
+      </ul>
+    <% end %>
+
+  </div>
 
   <div class="booking_request">
     <% @user.profile.bookings.each do |b| %>
