@@ -22,6 +22,22 @@ class Booking < ActiveRecord::Base
         errors.add(:start_time, "Bookings can only be made for a later than today's date.")
       end
     end
+
+
+    # def sitter_available?
+    # #does the sitter/profile have any bookings?
+    # sitter_bookings = self.profile.bookings.where("some SQL code here") # I need a profile_id to test this
+    # # if so what is the date_time of the booking? how long(num_of_hours)?
+    #   if sitter_bookings.any?
+    #     sitter_bookings.each do |s|
+    #       #compare
+    #       if s.date_time == self.date_time ||
+    #       errors.add("Sorry the caregiver has other appointment that time. ")
+    #       return
+    #       end
+    #     end
+    #   end
+
     def sitter_available?
       #does the sitter/profile have any bookings?
       other_bookings = profile.bookings.where("((start_time <= ? and end_time >= ?) or (start_time <= ? and end_time >= ?)) and
@@ -29,6 +45,7 @@ class Booking < ActiveRecord::Base
       self.start_time, self.start_time, self.end_time, self.end_time, true, self.id)
       if other_bookings.any?
       errors.add(:start_time, "the care giver is not available that time")
+
     end
    end
 

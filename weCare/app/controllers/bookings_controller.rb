@@ -19,8 +19,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
       if @booking.save
-        redirect_to root_url, notice: "Reservation created successfully!"
+        redirect_to user_path(current_user), notice: "Reservation created successfully!"
       else
+        # redirect_to profile_booking_url(@profile, @booking)
         render 'new'
       end
 

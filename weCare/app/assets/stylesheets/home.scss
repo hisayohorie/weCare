@@ -23,10 +23,16 @@ h1 {
   color: $green;
 }
 
+.row {
+  h1{
+    letter-spacing: 5px;
+  }
+}
+
 .nav {
   background-color: $orange;
   position: absolute;
-  padding: 10px 0;
+  padding: 5px 0;
   z-index: 100;
   top: 0;
   left: 0;
@@ -70,12 +76,18 @@ h1 {
   display: inline-block;
   position: relative;
   left: 10px;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   overflow: hidden;
   float: left;
 
-  a{
+  a {
     color: $green;
+  }
+  #become_caregiver {
+    border: 1px solid white;
+  }
+  span{
+    color: white;
   }
 }
 
@@ -114,31 +126,14 @@ h1 {
     margin-bottom: 40px;
   }
 
-  .search {
+}
 
+
+.search {
+  .text {
+    border-radius: 50px;
   }
+  #search_button {
+    border-radius: 50px;
 }
-
-
-
-.show_nearby_babysitters {
-  text-align: center;
-.nearby_babysitters{
-  list-style-type: none;
-}
-}
-
-
-.close {
-  background-color: $orange;
-  color: $green;
-  border: 1px solid $orange;
-
-}
-
-
-.signup_page,
-.login_page,
-.booking_form {
-  text-align: center;
 }

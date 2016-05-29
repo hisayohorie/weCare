@@ -39,7 +39,8 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.new(profile_params)
+    @user = current_user
+    @profile = @user.build_profile(profile_params)
 
     if @profile.save
       redirect_to profile_path(@profile)
@@ -69,7 +70,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(:user_id, :age, :description, :exp_num, :education, :language, :availability, :travel_propensity, :pets, :address)
+    params.require(:profile).permit(:user_id, :age, :description, :exp_num, :education, :language, :availability, :travel_propensity, :pets, :address, :rate, :phone_number, :transportation)
 
   end
 end

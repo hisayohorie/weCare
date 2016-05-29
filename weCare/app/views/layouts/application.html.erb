@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WeCare</title>
+  <title>WeRoboCare</title>
   <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["google_maps_api_key"]%>", async: true, defer: true></script>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application'%>
@@ -11,18 +11,24 @@
 <body>
 
   <div class="nav">
-  <li class = "home_nav"><%= link_to 'WeRoboCare', root_path %></li>
+  <li class = "home_nav">
+    <%= link_to root_path do %>
+      We<span><i class="fa fa-android" aria-hidden="true"></span></i>Care
+    <%end%>
+  </li>
         <ul class="navbar">
 
           <% if current_user %>
             <li>Welcome, <span><%= current_user.first_name %></span></li>
             <li><%= link_to 'Become A Care Giver', new_profile_path(current_user)%></li>
+            <li><%= link_to "User Profile", user_path(current_user)%><li>
             <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Sign Up', sign_up_path, class: "signup_button" %></li>
             <li><%= link_to 'Log In', log_in_path, method: :get, class: "login_button" %></li>
           <% end %>
         </ul>
+
 
   </div>
         <% if current_user.nil? %>
@@ -37,6 +43,7 @@
           </div>
 
         <% end %>
+
 <%= yield %>
 
 </body>

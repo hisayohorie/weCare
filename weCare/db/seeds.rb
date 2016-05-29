@@ -5,41 +5,6 @@ require 'faker'
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-# require 'faker'
-#
-# User.create({100.times do |parent|
-#   parent.first_name:Faker::Name.first_name
-#   parent.last_name:Faker::Name.last_name
-#   parent.address:Faker::Address.address
-#   parent.email:Faker::Email.email
-#   parent.photo:Faker::Avatar.image
-# end})
-
-# User.destroy_all
-# Profile.destroy_all
-#
-#
-# # addresses = ['220 King St W, Suite 200, Toronto, ON M5H 1K4',]
-#
-# 10.times do |n|
-#  u = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Number.number(4),photo: Faker::Avatar.image)
-#  u.profile.create!(
-#  age: 56,
-#  description: "Fun and kind",
-#  exp_num: 4,
-#  education: "Havard educated",
-#  language: "French",
-#  availability: "Full-time",
-#  travel_propensity: 30,
-#  transportation: "car",
-#  pets: true,
-#  phone_number: 666666666
-#  # address: addresses[n]
-#
-#  )
-#  sleep 2
-# end
-#
 
 User.destroy_all
 Profile.destroy_all
