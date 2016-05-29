@@ -1,11 +1,10 @@
-<%= @user.first_name %>'s profile
+<h2><%= @user.first_name %>'s profile<h2>
 
   <div class="user_info">
     <ul>
       <li><%= @user.photo %></li>
       <li><%= @user.first_name %></li>
       <li><%= @user.last_name %></li>
-      <li><%= @user.address %></li>
       <li><%= @user.email %></li>
     </ul>
   </div>
@@ -19,7 +18,7 @@
       <li><%= @user.profile.language %></li>
       <li><%= @user.profile.availability %></li>
       <li><%= @user.profile.transportation %></li>
-      <li><%= @user.profile.pet %></li>
+      <li><%= @user.profile.pets %></li>
       <li><%= @user.profile.phone_number %></li>
       <li><%= @user.profile.address %></li>
       <li><%= @user.profile.rate %></li>
@@ -27,12 +26,16 @@
   </div>
 
   <div class="booking_request">
-    <% @user.profile.bookings each do |b| %>
+    <% @user.profile.bookings.each do |b| %>
       <%= b.user.first_name %><% b.user.last_name %>
-      <%= b.user.address %>
+      <%= b.address %>
       <%= b.user.email %>
       <%= b.start_time %>
       <%= b.end_time %>
     <span><%= b.confirmation %></span>
+      <%= form_for [@user.profile, b] do |f|%>
+      <%= f.hidden_field :confirmation, value: true %>
+      <%= f.submit "Confirm Booking"%>
+      <% end %>
     <% end %>
   </div>

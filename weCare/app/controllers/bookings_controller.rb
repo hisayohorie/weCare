@@ -40,8 +40,12 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-
-
+    if @booking.update_attributes(booking_params)
+      flash[:notice]= "booking confirmed"
+      redirect_to profile_booking_url
+    else
+      render :show
+    end
   end
 
   def destroy
