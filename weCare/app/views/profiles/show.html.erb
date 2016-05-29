@@ -17,7 +17,7 @@
     <div class="babysitter_booking">
 
       <p>Book this babysitter:</p>
-      <p><%= button_to 'Book', new_booking_path, method: :get, class: "booking_button"  %></p>
+      <p><%= button_to 'Book', new_profile_booking_path(@profile), method: :get, class: "booking_button"  %></p>
 
       <div class = "booking_modal">
           <button type="button" class="close">x</button>
