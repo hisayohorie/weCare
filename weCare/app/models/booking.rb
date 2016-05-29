@@ -12,7 +12,7 @@ class Booking < ActiveRecord::Base
       end
     end
     def valid_time_range
-      if start_time >= end_time
+      if !start_time.blank? && !end_time.blank? && start_time >= end_time
         errors.add(:end_time, " we can't go to the past")
      end
     end
