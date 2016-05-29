@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WeCare</title>
+  <title>WeRoboCare</title>
   <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["google_maps_api_key"]%>", async: true, defer: true></script>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application'%>
@@ -11,7 +11,11 @@
 <body>
 
   <div class="nav">
-  <li class = "home_nav"><%= link_to 'WeRoboCare', root_path %></li>
+  <li class = "home_nav">
+    <%= link_to root_path do %>
+      We<span><i class="fa fa-android" aria-hidden="true"></span></i>Care
+    <%end%>
+  </li>
         <ul class="navbar">
 
           <% if current_user %>

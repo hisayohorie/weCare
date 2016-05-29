@@ -23,10 +23,16 @@ h1 {
   color: $green;
 }
 
+.row {
+  h1{
+    letter-spacing: 5px;
+  }
+}
+
 .nav {
   background-color: $orange;
   position: absolute;
-  padding: 10px 0;
+  padding: 5px 0;
   z-index: 100;
   top: 0;
   left: 0;
@@ -70,7 +76,7 @@ h1 {
   display: inline-block;
   position: relative;
   left: 10px;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   overflow: hidden;
   float: left;
 
@@ -79,6 +85,9 @@ h1 {
   }
   #become_caregiver {
     border: 1px solid white;
+  }
+  span{
+    color: white;
   }
 }
 

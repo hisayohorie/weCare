@@ -16,7 +16,9 @@ data-slides='[
       <%= form_tag profiles_path, method: :get do %>
         <%#= label_tag :Location, params[:search] %>
         <%= text_field_tag :search, nil, placeholder: "Search robositters near me" %>
-        <%= submit_tag "Search", id: "search_button" %>
+        <%= button_tag "", id: "search_button" do %>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        <%end%>
       <% end %>
     </div>
   </div>
@@ -24,20 +26,20 @@ data-slides='[
 
 
 <div class="flex-boxes">
-  <a href="javascript:void(0)" class="flex-box flex-box-big">
+  <a href="javascript:void(0)" class="flex-box flex-box">
     <img src="https://raw.githubusercontent.com/thoughtbot/refills/49db8c0f2f8066c2c3a275781503fe3303a1a9fc/source/images/placeholder.png" alt="">
     <h1 class="flex-title"> Find a care giver nearby you! </h1>
     <p>Simply search your location, and we will show you all the nearby care givers! </p>
   </a>
   <a href="javascript:void(0)" class="flex-box">
     <img src="https://raw.githubusercontent.com/thoughtbot/refills/49db8c0f2f8066c2c3a275781503fe3303a1a9fc/source/images/placeholder.png" alt="">
-    <h1 class="flex-title">Flex Box Item</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestiae fugiat tenetur fugit atque dignissimos, fugiat natus vitae.</p>
+    <h1 class="flex-title">Simple Sign up to book a care giver</h1>
+    <p>Easy sign up and booking process for service seeker!</p>
   </a>
   <a href="javascript:void(0)" class="flex-box">
     <img src="https://raw.githubusercontent.com/thoughtbot/refills/49db8c0f2f8066c2c3a275781503fe3303a1a9fc/source/images/placeholder.png" alt="">
-    <h1 class="flex-title">A Flex Box Item</h1>
-    <p>Lorem adipisicing elit. Voluptas consectetur tempora quis nam, officia tenetur blanditiis in illo dolor?</p>
+    <h1 class="flex-title">Become a Care Giver</h1>
+    <p>Simply create a PROFILE!</p>
   </a>
 </div>
 
@@ -71,7 +73,7 @@ data-slides='[
 
   <hr>
 
-  <p>Disclaimer area lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, nostrum repudiandae saepe.</p>
+  <p>Robots made with <i class="fa fa-heartbeat" aria-hidden="true"></i></p>
 </footer>
 
 <!-- <script>
