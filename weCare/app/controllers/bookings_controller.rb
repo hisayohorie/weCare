@@ -14,7 +14,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = @profile.booking.build(booking_params)
+    @profile = Profile.find(params[:profile_id])
+    @booking = @profile.bookings.build(booking_params)
     @booking.user = current_user
 
       if @booking.save
@@ -39,12 +40,11 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    if current_user
-      if @booking.update_attributes(booking_params)
-        redirect_to @booking
-      else
-        render :edit
-      end
+    if @booking.update_attributes(booking_params)
+      flash[:notice]= "booking confirmed"
+      redirect_to profile_booking_url
+    else
+      render :show
     end
   end
 
@@ -57,6 +57,6 @@ class BookingsController < ApplicationController
 private
 
 def booking_params
-  params.require(:booking).permit(:user_id, :date_time, :address, :num_of_hours, :service_id)
+  params.require(:booking).permit(:user_id, :start_time, :end_time, :address, :service_id)
 end
 end

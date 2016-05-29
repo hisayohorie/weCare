@@ -31,13 +31,14 @@
     <p><%= f.label :address %></p>
     <p><%= f.text_field :address %></p>
 
-    <p><%= f.label :distance_willing_to_travel %></p>
-    <p><%= f.number_field :travel_propensity %></p>
+
+    <p><%= f.label :distance_willing_to_travel %>(km)</p>
+    <p><%= f.number_field :distance_willing_to_travel %></p>
 
     <p><%= f.label :transportation %></p>
     <p><%= f.text_field :transportation %></p>
 
-    <p><%= f.label :comfortability_with_pets %></p>
+    <p><%= f.label :comfortable_with_pets %></p>
     <p><%= f.check_box :pets %></p>
 
     <%= f.submit %>
