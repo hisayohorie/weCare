@@ -42,3 +42,25 @@ input[type="text"] {
   top: 30%;
 
 }
+
+.show_nearby_babysitters {
+  text-align: center;
+.nearby_babysitters{
+  list-style-type: none;
+}
+}
+
+
+.close {
+  background-color: $orange;
+  color: $green;
+  border: 1px solid $orange;
+
+}
+
+
+.signup_page,
+.login_page,
+.booking_form {
+  text-align: center;
+}

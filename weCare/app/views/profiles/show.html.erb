@@ -16,10 +16,12 @@
 
     <div class="babysitter_booking">
 
+
       <p>Book this babysitter:</p>
 
-      <p><%= button_to 'Book', new_profile_booking_path(@profile), method: :get, class: "booking_button"  %></p>
-
+      <% if current_user != @profile.user %>
+        <p><%= button_to 'Book', new_profile_booking_path(@profile), method: :get, class: "booking_button"  %></p>
+      <% end %>
 
       <div class = "booking_modal">
           <button type="button" class="close">x</button>

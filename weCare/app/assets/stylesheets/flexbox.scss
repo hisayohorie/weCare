@@ -11,12 +11,15 @@
   $flex-box-width: 18em;
   $flex-box-color: transparentize($base-font-color, 0.3);
   $flex-box-top-colors:
-    tomato,
-    #72BFBF,
-    #92B1E3,
-    #E3D743,
-    #CCC,
-    #F6C05C;
+    $orange,
+    $green,
+    $orange;
+    // tomato,
+    // #72BFBF,
+    // #92B1E3,
+    // #E3D743,
+    // #CCC,
+    // #F6C05C;
 
 
   margin-top: 65px;
@@ -29,6 +32,7 @@
   text-align: center;
 
   .flex-box {
+    height: 500px;
     align-self: stretch;
     background: $flex-box-background;
     border-radius: $base-border-radius;
@@ -40,7 +44,7 @@
     text-decoration: none;
     transition: all 0.2s ease-in-out;
 
-    @for $i from 1 to 7 {
+    @for $i from 1 to 4 {
 // assign colors from $flex-box-top-colors list
       &:nth-child(#{$i}) {
         $color-from-list: nth($flex-box-top-colors, $i);
@@ -55,7 +59,7 @@
 
     img {
       display: block;
-      height: 3em;
+      height: 8em;
       margin: 0 auto 1em;
       opacity: 0.4;
     }
@@ -64,6 +68,8 @@
       color: $flex-box-color;
       font-size: 1.2em;
       margin-bottom: 0.5em;
+      margin-top: 100px;
+
     }
 
     p {

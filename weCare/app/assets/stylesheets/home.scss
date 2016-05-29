@@ -126,31 +126,14 @@ h1 {
     margin-bottom: 40px;
   }
 
-  .search {
+}
 
+
+.search {
+  .text {
+    border-radius: 50px;
   }
+  #search_button {
+    border-radius: 50px;
 }
-
-
-
-.show_nearby_babysitters {
-  text-align: center;
-.nearby_babysitters{
-  list-style-type: none;
-}
-}
-
-
-.close {
-  background-color: $orange;
-  color: $green;
-  border: 1px solid $orange;
-
-}
-
-
-.signup_page,
-.login_page,
-.booking_form {
-  text-align: center;
 }

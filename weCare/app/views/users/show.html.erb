@@ -9,9 +9,10 @@
     </ul>
   </div>
 
+  <% if @user.profile %>
   <div class="user_profile">
     <ul>
-      <li><%= @user.profile.age %></li>
+
       <li><%= @user.profile.description %></li>
       <li><%= @user.profile.exp_num %></li>
       <li><%= @user.profile.education %></li>
@@ -24,6 +25,8 @@
       <li><%= @user.profile.rate %></li>
     </ul>
   </div>
+  <% end %>
+
   <div class = "bookings_you_made">
     <% @user.bookings.each do |b| %>
       <ul>
@@ -36,18 +39,20 @@
     <% end %>
 
   </div>
-
-  <div class="booking_request">
-    <% @user.profile.bookings.each do |b| %>
-      <%= b.user.first_name %><% b.user.last_name %>
-      <%= b.address %>
-      <%= b.user.email %>
-      <%= b.start_time %>
-      <%= b.end_time %>
-    <span><%= b.confirmation %></span>
-      <%= form_for [@user.profile, b] do |f|%>
-      <%= f.hidden_field :confirmation, value: true %>
-      <%= f.submit "Confirm Booking"%>
+  <% if @user.profile %>
+    <div class="booking_request">
+      <% @user.profile.bookings.each do |b| %>
+        <%= b.user.first_name %><% b.user.last_name %>
+        <%= b.address %>
+        <%= b.user.email %>
+        <%= b.start_time %>
+        <%= b.end_time %>
+      <span><%= b.confirmation %></span>
+        <%= form_for [@user.profile, b] do |f|%>
+        <%= f.hidden_field :confirmation, value: true %>
+        <%= f.submit "Confirm Booking"%>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+
+  <% end %>
