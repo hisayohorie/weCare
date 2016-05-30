@@ -9,6 +9,7 @@
     <li>Your Email: <%= @user.email %></li>
   </ul>
 
+
   <% if @user.profile %>
   <div class="user_profile">
     <ul>
@@ -58,6 +59,8 @@
     <%= f.hidden_field :confirmation, value: true %>
     <%= f.submit "Confirm Booking"%>
     <% end %>
+
+  </div>
   <% end %>
 <% end %>
 </div>
