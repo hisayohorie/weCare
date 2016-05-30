@@ -128,7 +128,6 @@ h1 {
 
 }
 
-
 .search {
   .text {
     border-radius: 50px;
@@ -139,5 +138,8 @@ h1 {
  input {
    background-color: inherit;
    color: $green;
+   &:focus{
+     outline-color: $green;
+   }
  }
 }
