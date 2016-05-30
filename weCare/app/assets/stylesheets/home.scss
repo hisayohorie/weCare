@@ -136,4 +136,8 @@ h1 {
   #search_button {
     border-radius: 50px;
 }
+ input {
+   background-color: inherit;
+   color: $green;
+ }
 }

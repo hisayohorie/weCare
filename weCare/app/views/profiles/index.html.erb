@@ -9,12 +9,18 @@
   <div class= "nearby_babysitters">
   <% if @nearby_profiles %>
     <% @nearby_profiles.each do |p| %>
-      <li>
+      <div class = "profile_pic">
+        <% if p.user.photo%>
           <%= image_tag p.user.photo %>
-          <%= p.age %>years old
-          <%= p.display_distance_to(params[:search]).round(2)%>kms away
-          <%= button_to 'more info', profile_path(p), method: :get%>
-      </li>
+        <% else %>
+          <p>No Image<p>
+        <% end %>
+      </div>
+      <div class = "profile_info">
+        <p><%= p.age %>years old</p>
+        <p><%= p.display_distance_to(params[:search]).round(2)%>kms away</p>
+        <p><%= button_to 'more info', profile_path(p), method: :get%></p>
+      </div>
     <%end%>
   <%end%>
   </div>

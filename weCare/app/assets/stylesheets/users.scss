@@ -7,3 +7,30 @@
   border: 1px solid $orange;
 
 }
+
+.user_profile {
+  text-align: center;
+  padding-top: 100px;
+
+}
+
+.user_info {
+  border: 1px solid $orange;
+  width: 300px;
+}
+
+.bookings_you_made,
+.booking_request {
+  border: 1px solid $green;
+  width: 300px;
+}
+
+.user_info,
+.bookings_you_made,
+.booking_request {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: top;
+  padding: 20px 10px;
+}

@@ -1,0 +1,38 @@
+.nearby_babysitters{
+
+  overflow: hidden;
+  vertical-align: top;
+
+  .profile_pic {
+  width: 350px;
+  height: 350px;
+  // float: left;
+  border: 3px solid $green;
+  border-radius: 50%;
+  margin-left: 150px;
+
+    p {
+      text-align: center;
+      line-height: 350px;
+    }
+
+
+  }
+
+  .profile_info {
+    float: right;
+    width: 350px;
+    height: 350px;
+    border: 1px solid $green;
+    line-height: 350px;
+    text-align: center;
+
+    margin-right: 150px;
+
+  }
+
+  .profile_pic {
+    vertical-align: top;
+  }
+
+}
