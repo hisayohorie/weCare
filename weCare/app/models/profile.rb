@@ -1,5 +1,5 @@
 class Profile < ActiveRecord::Base
-  has_many :services
+  has_and_belongs_to_many :services
   has_many :reviews
   has_many :bookings
   belongs_to :user

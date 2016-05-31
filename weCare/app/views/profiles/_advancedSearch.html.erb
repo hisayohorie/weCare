@@ -1,0 +1,14 @@
+<div class="advanced_search">
+  <%= form_tag profiles_path do %>
+
+    <%= label :service_id, "Service Categories" %>
+    <%= select_tag :service_id, options_from_collection_for_select(Service.all, "id", "category", params[:service_id])%>
+
+    <%= label :rate, "Rate", id: 'rate_label' %>
+    <span>$15</span>
+    <%= range_field_tag :rate, 30, in: 15..100, step: 5 %>
+    <span>$100</span>
+    <%= submit_tag "Search!", class: "search_button" %>
+
+  <% end %>
+</div>

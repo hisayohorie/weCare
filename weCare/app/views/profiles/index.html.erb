@@ -5,9 +5,17 @@
 
 <div id= "map" data-latitude= "<%= @lat.to_f %>" data-longitude="<%=@lng.to_f%>"></div>
 
+<div>
 
+</div>
+
+
+<div class="advancedSearch" >
+    <%= render partial: "profiles/advancedSearch"%>
+</div>
   <div class= "nearby_babysitters">
-  <% if @nearby_profiles %>
+    <% if @nearby_profiles %>
+
     <% @nearby_profiles.each do |p| %>
       <div class = "profile_pic">
         <% if p.user.photo%>
