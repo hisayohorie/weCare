@@ -1,5 +1,5 @@
 <div class="advanced_search">
-  <%= form_tag profiles_path do %>
+  <%= form_tag profiles_path, method: :get do %>
 
     <%= label :service_id, "Service Categories" %>
     <%= select_tag :service_id, options_from_collection_for_select(Service.all, "id", "category", params[:service_id])%>

@@ -10,22 +10,16 @@ class ProfilesController < ApplicationController
         @location_result = @location.first.geometry["location"]
         @lat = @location_result["lat"]
         @lng = @location_result["lng"]
-        @nearby_profiles = Profile.near([@lat, @lng], 7, units: :km)
+        @distance = params[:distance]
+        @nearby_profiles = Profile.near([@lat, @lng], params[:distance], units: :km)
 
-        if params[:services] && params[:rate]
 
-          serviceProfile = Service.find(params[:service_id]).profiles
-              @nearby_profiles = serviceProfile.where("rate < ?", params[:rate])
-              @nearby_profiles.each do |p|
-                p.rate
-              end
-        end
 
       elsif params[:latitude] && params[:longitude] && params[:distance]
+
          @latitude = params[:latitude]
          @longitude = params[:longitude]
-
-         @nearby_profiles = Profile.near([@latitude, @longitude], @distance, units: :km)
+         @nearby_profiles = Profile.near([@latitude, @longitude], params[:distance], units: :km)
 
       end
          respond_to do |format|
@@ -75,7 +69,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(:user_id, :age, :description, :exp_num, :education, :language, :availability, :travel_propensity, :pets, :address, :rate, :phone_number, :transportation)
+    params.permit(:user_id, :age, :description, :exp_num, :education, :language, :availability, :travel_propensity, :pets, :address, :rate, :phone_number, :transportation)
 
   end
 end
