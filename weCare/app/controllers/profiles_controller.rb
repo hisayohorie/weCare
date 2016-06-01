@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
 
 
   def index
+
       if params[:search]
         location = Geocoder.search(params[:search])
         location_result = location.first.geometry["location"]
@@ -22,9 +23,8 @@ class ProfilesController < ApplicationController
       elsif params[:latitude] && params[:longitude] && params[:distance]
          @lat = params[:latitude]
          @lng= params[:longitude]
+         @distance = params[:distance]
          @nearby_profiles = Profile.near([@lat, @lng], params[:distance], units: :km)
-
-
 
       end
          respond_to do |format|

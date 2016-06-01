@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-
   before_action :load_profile
     def show
       @review = Review.find(params[:id])
@@ -19,11 +18,10 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
       @review.destroy
     end
-  end
 
   private
   def review_params
-    params.require(:review).permit(:service_id, :user_id, :descreption, :star_rating, :dependability, :pancutuarity, :reliable_transportation, :hire_again)
+    params.require(:review).permit(:service_id, :user_id, :description, :star_rating, :dependability, :pancutuarity, :reliable_transportation, :hire_again)
   end
 
   def load_profile
