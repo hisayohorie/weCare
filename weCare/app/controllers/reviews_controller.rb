@@ -2,13 +2,15 @@ class ReviewsController < ApplicationController
   before_action :load_profile
     def show
       @review = Review.find(params[:id])
+      @reviewer = self.user
+      # @relevant_bookings = reviewer.bookings.where(profile_id: self.profile_id)
     end
 
     def create
       @review = @profile.reviews.build(review_params)
       @review.user = current_user
       if @review.save
-        redirect_to profiles_url, notice: 'Thank you for your review!'
+        redirect_to profile_url(@profile), notice: 'Thank you for your review!'
       else
         render 'profiles/show'
       end

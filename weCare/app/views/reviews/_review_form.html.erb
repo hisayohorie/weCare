@@ -1,8 +1,8 @@
 <h4>New Review</h4>
 <%= form_for([@profile, @review]) do |f| %>
   <div class = "rating_form">
+    <p>how you rate this robot?</p>
     <span class="star_rating">
-      <p>how you rate this robot?</p>
       <%= f.label :star_rating %>
       <%= f.radio_button :star_rating, 1, id: "rating-1" %>
       <%= f.label :star_rating %>
