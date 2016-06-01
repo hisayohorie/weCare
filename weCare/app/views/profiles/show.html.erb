@@ -34,15 +34,15 @@
       <h4>New Review</h4>
       <%= form_for([@profile, @review]) do |f| %>
         <%= f.label :star_rating %>
-        <%= f.radio_button :star_rating, id: "rating-1",1 %>
+        <%= f.radio_button :star_rating, 1, id: "rating-1" %>
         <%= f.label :star_rating %>
-        <%= f.radio_button :star_rating, id: "rating-2",2%>
+        <%= f.radio_button :star_rating, 2, id: "rating-2"%>
         <%= f.label :star_rating %>
-        <%= f.radio_button :star_rating,, id: "rating-3",3%>
+        <%= f.radio_button :star_rating, 3, id: "rating-3"%>
         <%= f.label :star_rating %>
-        <%= f.radio_button :star_rating, id:4%>
+        <%= f.radio_button :star_rating, 4, id: "rating-4"%>
         <%= f.label :star_rating %>
-        <%= f.radio_button :star_rating, 5 %>
+        <%= f.radio_button :star_rating, 5, id: "rating-5" %>
       <% end %>
     <% end %>
     <div class="babysitter_booking">
