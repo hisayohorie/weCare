@@ -1,7 +1,7 @@
 
 var locationDataLat = $('#map').attr("data-latitude");
 var locationDataLng = $('#map').attr("data-longitude");
-// var locationDistance = $('#distance').attr("data-distance");
+// var locationDistance = $('#map').attr("data-distance");
 console.log(locationDataLat);
 
     var mapPlaceholder = $("#map");
@@ -22,5 +22,6 @@ var marker = new google.maps.Marker({
   title: 'Hello World!'
 });
   marker.setMap(map);
-
 <% end %>
+
+  $('.nearby_babysitters').html("<%= j(render @nearby_profiles) %>")

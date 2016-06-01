@@ -3,23 +3,28 @@ class ProfilesController < ApplicationController
 
 
   def index
-
-      @user_location = params[:search]
-      if @user_location
-        @location = Geocoder.search(@user_location)
-        @location_result = @location.first.geometry["location"]
-        @lat = @location_result["lat"]
-        @lng = @location_result["lng"]
+      if params[:search]
+        location = Geocoder.search(params[:search])
+        location_result = location.first.geometry["location"]
+        @lat = location_result["lat"]
+        @lng = location_result["lng"]
         @distance = params[:distance]
         @nearby_profiles = Profile.near([@lat, @lng], params[:distance], units: :km)
 
 
+      elsif params[:service_id] && params[:rate] && params[:distance]
+        @lat = params[:latitude]
+        @lng = params[:longitude]
+        @distance = params[:distance]
+        @nearby_profiles = Profile.near([@lat, @lng]).joins(:services).where("rate <= ?", params[:rate]).where(services: {id: params[:service_id]} )
+
 
       elsif params[:latitude] && params[:longitude] && params[:distance]
+         @lat = params[:latitude]
+         @lng= params[:longitude]
+         @nearby_profiles = Profile.near([@lat, @lng], params[:distance], units: :km)
 
-         @latitude = params[:latitude]
-         @longitude = params[:longitude]
-         @nearby_profiles = Profile.near([@latitude, @longitude], params[:distance], units: :km)
+
 
       end
          respond_to do |format|
@@ -31,6 +36,9 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    if current_user
+      @review = @profile.reviews.build
+    end
   end
 
   def new

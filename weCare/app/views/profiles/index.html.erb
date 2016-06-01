@@ -15,20 +15,8 @@
 </div>
   <div class= "nearby_babysitters">
     <% if @nearby_profiles %>
-
     <% @nearby_profiles.each do |p| %>
-      <div class = "profile_pic">
-        <% if p.user.photo%>
-          <%= image_tag p.user.photo %>
-        <% else %>
-          <p>No Image<p>
-        <% end %>
-      </div>
-      <div class = "profile_info">
-        <p><%= p.age %>years old</p>
-        <p><%= p.display_distance_to(params[:search]).round(2)%>kms away</p>
-        <p><%= button_to 'more info', profile_path(p), method: :get%></p>
-      </div>
+      <%= render partial: "profiles/profile", locals: {profile: p} %>
     <%end%>
   <%end%>
   </div>

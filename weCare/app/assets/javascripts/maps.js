@@ -9,11 +9,24 @@ $(document).on('ready', function(){
     $.ajax({
       url: "/profiles",
       method: "get",
-      data: {"latitude": locationDataLat , "longitude": locationDataLng, "distance":locationDistance},
+      data: {"latitude": locationDataLat , "longitude": locationDataLng, "distance":locationDistance },
       dataType: "script"
-
       });
     };
     initMap();
+
+    $('.advancedSearch form').on('submit', function(e){
+      e.preventDefault();
+      var searchData = $('form').serialize();
+
+      $.ajax({
+        url:"/profiles",
+        method: "get",
+        data: searchData,
+        dataType: "script"
+      });
+
+
+    });
   };
 });

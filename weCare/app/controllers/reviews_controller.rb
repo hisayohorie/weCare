@@ -1,51 +1,32 @@
 class ReviewsController < ApplicationController
-  def index
-    @reviews = Review.all
-  end
 
-  def show
-    @review = Review.find(params[:id])
-  end
+  before_action :load_profile
+    def show
+      @review = Review.find(params[:id])
+    end
 
+    def create
+      @review = @profile.reviews.build(review_params)
+      @review.user = current_user
+      if @review.save
+        redirect_to profiles_url, notice: 'Thank you for your review!'
+      else
+        render 'profiles/show'
+      end
+    end
 
-  def new
-    @review = Review.new
-  end
-
-  def create
-    if current_user
-    @review = Review.new
-    if @review.save
-      flash[:notice] = "Review is succesfully created"
-      redirect_to :review
-    else
-      render :new
+    def destroy
+      @review = Review.find(params[:id])
+      @review.destroy
     end
   end
 
-  def edit
-    @review = Review.find(params[:id])
+  private
+  def review_params
+    params.require(:review).permit(:service_id, :user_id, :descreption, :star_rating, :dependability, :pancutuarity, :reliable_transportation, :hire_again)
   end
 
-  def update
-    if current_user
-    @review = Review.find(params[:id])
-    if @review.update_attributes(review_params)
-      redirect_to @review
-    else
-      render :edit
-    end
+  def load_profile
+    @profile = Profile.find(params[:profile_id])
   end
-
-
-  def destroy
-    if current_user
-    @review = Review.find(params[:id])
-    @review.destroy
-  end
-end
-
-private
-def review_params
-  params.require(:review).permit(:service_id, :user_id, :descreption, :star_rating, :dependability, :pancutuarity, :reliable_transportation, :hire_again)
 end
