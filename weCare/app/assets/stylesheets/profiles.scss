@@ -15,15 +15,8 @@
   text-align: center;
 }
 
-// review section
-.rating_form {
-  span {
-
-    display: inline-block;
-  }
-
-radio_button {
-
-}
-
+// review partial
+.star_rating {
+  background-image:url("star.png") 0 0;
+  display: inline-block;
 }
