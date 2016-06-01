@@ -33,7 +33,7 @@ h1 {
   background-color: $orange;
   position: absolute;
   padding: 5px 0;
-  z-index: 100;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
@@ -106,6 +106,8 @@ h1 {
   width: 80%;
   right: 10%;
   left: 10%;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 
@@ -126,20 +128,4 @@ h1 {
     margin-bottom: 40px;
   }
 
-}
-
-.search {
-  .text {
-    border-radius: 50px;
-  }
-  #search_button {
-    border-radius: 50px;
-}
- input {
-   background-color: inherit;
-   color: $green;
-   &:focus{
-     outline-color: $green;
-   }
- }
 }

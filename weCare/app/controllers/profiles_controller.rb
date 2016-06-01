@@ -32,6 +32,10 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    @booking = @profile.bookings.last
+
+
+
   end
 
   def new

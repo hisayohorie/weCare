@@ -32,15 +32,19 @@
 
   </div>
         <% if current_user.nil? %>
+        <div class = "modal-dialog">
           <div class= "login_modal">
-            <button type="button" class="close">x</button>
+            <button type="button" class="close">Close</button>
             <%= render partial: "sessions/login"%>
           </div>
+        </div>
 
+        <div class = "modal-dialog">
           <div class= "signup_modal">
-            <button type="button" class="close">x</button>
+            <button type="button" class="close">Close</button>
             <%= render partial: "users/signup"%>
           </div>
+        </div>
 
         <% end %>
 

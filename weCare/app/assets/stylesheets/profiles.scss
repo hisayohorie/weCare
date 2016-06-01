@@ -3,16 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
-.babysitter_profile {
+#profile_info{
+  border: 1px solid $green;
   text-align: center;
-  // overflow: hidden;
-
+  float: right;
+  // width: 50%;
+  margin-right: 10%;
+  padding: 2% 10%;
 }
+
 .photo{
   float: left;
+  // height: 100vh;
+  border: 1px solid $green;
+  border-radius: 50%;
+  height: 350px;
+  width: 350px;
+
 }
 
 .caregiver_form {
   text-align: center;
+}
+
+.babysitter_profile {
+  margin-left: 10%;
+  margin-right: 10%;
+
 }

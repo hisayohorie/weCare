@@ -33,11 +33,11 @@
   <h1>Your bookings:</h1>
   <% @user.bookings.each do |b| %>
     <ul>
-      <li>First Name: <% b.profile.user.first_name %></li>
-      <li>Last Name: <% b.profile.user.last_name %></li>
-      <li>Start Time: <% b.start_time %></li>
-      <li>End Time: <% b.end_time %></li>
-      <li>Confirmed: <% b.confirmation %></li>
+      <li>First Name: <%= b.profile.user.first_name %></li>
+      <li>Last Name: <%= b.profile.user.last_name %></li>
+      <li>Start Time: <%= b.start_time %></li>
+      <li>End Time: <%= b.end_time %></li>
+      <li>Confirmed: <%= b.confirmation %></li>
     </ul>
   <% end %>
   <% else %>

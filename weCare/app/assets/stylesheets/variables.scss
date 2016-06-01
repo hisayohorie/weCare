@@ -9,8 +9,13 @@ $medGray:                #94989f; // Regular
 $lightGrey: 	           #cccccc;
 $greyTrans:              rgba(204, 204, 204, 0.5);
 $black:                  #282828;
+$black_trans:            rgba(0, 0, 0, 0.5);
 
 // Font Color Variables
 $titleColor:             $black;
 $bodyColor:              $black;
 $fontLight:            $medGray;
+
+$zindexModal   : 9000;
+$zindexSearch  : 8000;
+$zindexOverlay : 7000;
