@@ -19,10 +19,10 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
       if @booking.save
-        redirect_to user_path(current_user), notice: "Booking created successfully!"
-        if request.xhr?
-          render partial: 'bookings/booking_confirm'
-        end
+        # redirect_to user_path(current_user), notice: "Booking created successfully!"
+        # if request.xhr?
+        render partial: 'bookings/booking_confirm'
+        # end
       else
 
         # redirect_to profile_booking_url(@profile, @booking)
