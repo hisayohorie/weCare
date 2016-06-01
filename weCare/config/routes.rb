@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index]
   resources :profiles do
     resources :bookings
-    resources :reviews
+    resources :reviews, only: [:show, :create, :destroy]
   end
 
 

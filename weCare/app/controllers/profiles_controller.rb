@@ -4,24 +4,28 @@ class ProfilesController < ApplicationController
 
   def index
 
-      @user_location = params[:search]
-      if @user_location
-        @location = Geocoder.search(@user_location)
-        @location_result = @location.first.geometry["location"]
-        @lat = @location_result["lat"]
-        @lng = @location_result["lng"]
+      if params[:search]
+        location = Geocoder.search(params[:search])
+        location_result = location.first.geometry["location"]
+        @lat = location_result["lat"]
+        @lng = location_result["lng"]
+        @distance = params[:distance]
+        @nearby_profiles = Profile.near([@lat, @lng], params[:distance], units: :km)
 
 
-        @nearby_profiles = Profile.near([@lat, @lng], 7, units: :km)
+      elsif params[:service_id] && params[:rate] && params[:distance]
+        @lat = params[:latitude]
+        @lng = params[:longitude]
+        @distance = params[:distance]
+        @nearby_profiles = Profile.near([@lat, @lng]).joins(:services).where("rate <= ?", params[:rate]).where(services: {id: params[:service_id]} )
 
 
-      elsif params[:latitude] && params[:longitude]
-         @latitude = params[:latitude]
-         @longitude = params[:longitude]
-         @nearby_profiles = Profile.near([@latitude, @longitude], 7, units: :km)
+      elsif params[:latitude] && params[:longitude] && params[:distance]
+         @lat = params[:latitude]
+         @lng= params[:longitude]
+         @distance = params[:distance]
+         @nearby_profiles = Profile.near([@lat, @lng], params[:distance], units: :km)
 
-      # else
-      #    @profiles = Profile.all
       end
          respond_to do |format|
          format.html
@@ -32,9 +36,12 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
-    @booking = @profile.bookings.last
 
+    @booking = @profile.bookings.last #maybe for testing?
 
+    if current_user
+      @review = @profile.reviews.build
+    end
 
   end
 
@@ -74,7 +81,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(:user_id, :age, :description, :exp_num, :education, :language, :availability, :travel_propensity, :pets, :address, :rate, :phone_number, :transportation)
+    params.permit(:user_id, :age, :description, :exp_num, :education, :language, :availability, :travel_propensity, :pets, :address, :rate, :phone_number, :transportation)
 
   end
 end

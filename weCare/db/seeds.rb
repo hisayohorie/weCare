@@ -8,6 +8,8 @@ require 'faker'
 
 User.destroy_all
 Profile.destroy_all
+Service.destroy_all
+
 
 addresses =[
   "220 King St W, Suite 200, Toronto, ON M5H 1K4",
@@ -47,8 +49,17 @@ endTime =[
   DateTime.new(2016,6,3,18,00),
   DateTime.new(2016,6,3,20,00),
   DateTime.new(2016,6,4,17,00)
-
 ]
+
+rate =[15, 16, 17, 18, 20, 20, 25, 25, 30, 35]
+
+services = ["infant_care", "toddler_care", "tween_care", "teenage_care", "senior_care"].each do |c|
+   Service.create!({category: c})
+end
+
+
+
+
 
   10.times do |n|
      babysitter = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Number.number(4),photo: Faker::Avatar.image)
@@ -67,15 +78,18 @@ endTime =[
        transportation: "car",
        pets: true,
        phone_number: 666666666,
-       address: addresses[n]
-     )
+       address: addresses[n],
+       rate: rate[n]
 
+     )
+     sleep 2
+
+     babysitter_profiles.services << Service.all.sample
 
      parent.bookings.create!(
      start_time: startTime[n],
      end_time: endTime[n],
      address: "100 College Street, Toronto",
-     service_id:1,
      confirmation:true,
      profile_id: babysitter_profiles.id
      )

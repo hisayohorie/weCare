@@ -1,0 +1,12 @@
+<div class = "profile_pic">
+  <% if profile.user.photo%>
+    <%= image_tag profile.user.photo %>
+  <% else %>
+    <p>No Image<p>
+  <% end %>
+</div>
+<div class = "profile_info">
+  <p><%= profile.age %>years old</p>
+  <p><%= profile.display_distance_to([@lat, @lng]).round(2)%>kms away</p>
+  <p><%= button_to 'more info', profile_path(profile), method: :get%></p>
+</div>

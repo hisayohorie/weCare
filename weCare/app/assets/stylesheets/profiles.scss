@@ -2,32 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-#profile_info{
-  border: 1px solid $green;
+.babysitter_profile {
   text-align: center;
-  float: right;
-  // width: 50%;
-  margin-right: 10%;
-  padding: 2% 10%;
-}
+  // overflow: hidden;
 
+}
 .photo{
   float: left;
-  // height: 100vh;
-  border: 1px solid $green;
-  border-radius: 50%;
-  height: 350px;
-  width: 350px;
-
 }
 
 .caregiver_form {
   text-align: center;
 }
 
-.babysitter_profile {
-  margin-left: 10%;
-  margin-right: 10%;
-
+// review partial
+.star_rating {
+  background-image:url("png") 0 0;
+  display: inline-block;
 }

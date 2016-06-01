@@ -14,27 +14,41 @@
         <p>Transpotation: <%= @profile.transportation %></p>
         <p>Comfortable with pets: <%= @profile.pets %></p>
         <p>Phone: <%= @profile.phone_number %></p>
-        <p>Book this babysitter!</p>
 
+    <h3>Review</h3>
+    <% if @reviews %>
+      <% @profile.reviews.each do |r| %>
+        <p>Star rating:<%= r.star_rating %></p>
+        <p>Dependabiity:<%= r.dependability %></p>
+        <p>Punctuality:<%= r.punctuality %></p>
+        <p>Reliable transportation<%= r.reliable_transportation %></p>
+        <p>Hire Again:<%= r.hire_again %></p>
+        <p>Description:<%= r.description%></p>
+        <% if r.user != nil %>
+          <em> reviewed by <%= r.user.first_name %></em>
+          <p>Posted at:<%= r.created_at %></p>
+        <% end %>
+      <% end %>
+  <% else %>
+    <p> No reviews yet </p>
+  <% end %>
+    <% if current_user %>
+      <%= render partial: "reviews/review_form" %>
+    <% end %>
     <div class="babysitter_booking">
+      <p>Book this babysitter:</p>
+
       <% if current_user != @profile.user %>
         <p><%= button_to 'Book', new_profile_booking_path(@profile), method: :get, class: "booking_button"  %></p>
       <% end %>
     </div>
 
-      <div class = "modal-dialog">
+    <div class = "modal-dialog">
       <div class = "booking_modal">
           <button type="button" class="close">x</button>
           <%= render partial: "bookings/booking"%>
       </div>
     </div>
-
-<div class = "booking_check">
-  
-</div>
-
     </div>
-
-
 
 </div>
