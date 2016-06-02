@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:show, :create, :destroy]
   end
 
+  get '/reviews/getform/:profile_id' => 'reviews#get_form'
+
 
   # resources :services
 

@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
       @review = @profile.reviews.build(review_params)
       @review.user = current_user
       if @review.save
-        redirect_to profiles_url, notice: 'Thank you for your review!'
+        redirect_to profile_url(@profile), notice: 'Thank you for your review!'
       else
         render 'profiles/show'
       end
@@ -17,6 +17,11 @@ class ReviewsController < ApplicationController
     def destroy
       @review = Review.find(params[:id])
       @review.destroy
+    end
+
+    def get_form
+      @review = Review.new
+      render partial: 'reviews/review_form' if current_user
     end
 
   private
