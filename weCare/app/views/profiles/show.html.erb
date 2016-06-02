@@ -31,9 +31,12 @@
   <% else %>
     <p> No reviews yet </p>
   <% end %>
-    <% if current_user %>
-      <%= render partial: "reviews/review_form" %>
-    <% end %>
+
+    <div id="reviewContainer"></div>
+    <button id="makeReview" data-id="<%= @profile.id %>">Make Review</button>
+    <%# if current_user %>
+      <%#= render partial: "reviews/review_form" %>
+    <%# end %>
     <div class="babysitter_booking">
       <p>Book this babysitter:</p>
 

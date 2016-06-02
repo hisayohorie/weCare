@@ -1,6 +1,6 @@
 <div class= "booking_form">
 
-  <%= form_for [@profile, Booking.new] do |f| %>
+  <%= form_for [@profile, Booking.new], :data => {:id => @profile.id} do |f| %>
 
     <p><%= f.label :start_time %></p>
     <p><%= f.datetime_select :start_time %></p>
@@ -12,6 +12,6 @@
     <p><%= f.text_field :address %></p>
 
 
-    <%= f.submit 'Create Booking', :class => "create_booking_button" %>
+    <%= f.submit 'Create Booking', :class => "create_booking_button"  %>
   <% end %>
 </div>

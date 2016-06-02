@@ -1,18 +1,22 @@
 $(document).on('ready', function(){
-  $('.booking_form').on('submit', function(){
+  $('#new_booking').on('submit', function(e){
+    e.preventDefault();
 
-        console.log("it works");
-        var booking_info = $('form').serialize();
-  $.ajax({
-    url: "/profiles/params[:id]",
-    method: "Post",
-    dataType: "html",
-    data: booking_info,
-    success: function(data){
-      console.log("it works?");
-      $('.booking_modal').html("<%= render 'bookings/booking_confirm'%>");
-    }
+    var booking_info = $('form').serialize();
+    var profileId = $(this).attr('data-id');
+    alert(profileId);
+    $.ajax({
+      url: "/profiles/" + profileId + "/bookings",
+      method: "POST",
+      dataType: "html",
+      data: booking_info,
+      success: function(data){
+        $('.booking_modal').html(data);
+      }
+    });
 
-  });
+    $('.close').on('click', function(){
+      $('.booking_modal').hide();
+    });
   });
 });

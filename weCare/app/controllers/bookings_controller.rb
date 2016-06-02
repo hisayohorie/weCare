@@ -14,14 +14,15 @@ class BookingsController < ApplicationController
   end
 
   def create
+
     @profile = Profile.find(params[:profile_id])
     @booking = @profile.bookings.build(booking_params)
     @booking.user = current_user
 
       if @booking.save
-        redirect_to user_path(current_user), notice: "Booking created successfully!"
+        # redirect_to user_path(current_user), notice: "Booking created successfully!"
         if request.xhr?
-          render partial: 'bookings/booking_confirm'
+        render partial: 'bookings/booking_confirm'
         end
       else
 

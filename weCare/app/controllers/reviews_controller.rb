@@ -21,6 +21,11 @@ class ReviewsController < ApplicationController
       @review.destroy
     end
 
+    def get_form
+      @review = Review.new
+      render partial: 'reviews/review_form' if current_user
+    end
+
   private
   def review_params
     params.require(:review).permit(:service_id, :user_id, :description, :star_rating, :dependability, :pancutuarity, :reliable_transportation, :hire_again)
