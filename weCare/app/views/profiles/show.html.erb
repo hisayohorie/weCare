@@ -1,6 +1,19 @@
 <div class = "babysitter_profile">
   <h1>Robositter:</h1>
-    <div class = "photo"><%= image_tag @profile.user.photo %></div>
+    <div class = "photo"><%= image_tag @profile.user.photo %>
+      <div class="babysitter_booking">
+        <p>Book this babysitter:</p>
+
+        <% if current_user != @profile.user %>
+          <p><%= button_to 'Book', new_profile_booking_path(@profile), method: :get, class: "booking_button"  %></p>
+        <% end %>
+      </div>
+      <div id="reviewContainer"></div>
+      <button id="makeReview" data-id="<%= @profile.id %>">Write A Review</button>
+      <%# if current_user %>
+        <%#= render partial: "reviews/review_form" %>
+      <%# end %>
+      </div>
 
     <div id = "profile_info">
     <h3>About Me</h3>
@@ -33,18 +46,7 @@
     <p> No reviews yet </p>
   <% end %>
 
-    <div id="reviewContainer"></div>
-    <button id="makeReview" data-id="<%= @profile.id %>">Make Review</button>
-    <%# if current_user %>
-      <%#= render partial: "reviews/review_form" %>
-    <%# end %>
-    <div class="babysitter_booking">
-      <p>Book this babysitter:</p>
 
-      <% if current_user != @profile.user %>
-        <p><%= button_to 'Book', new_profile_booking_path(@profile), method: :get, class: "booking_button"  %></p>
-      <% end %>
-    </div>
 
     <div class = "modal-dialog">
       <div class = "booking_modal">
