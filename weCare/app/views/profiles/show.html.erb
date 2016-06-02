@@ -21,15 +21,14 @@
         <p><%= @profile.age %>years old</p>
         <p>Experience: <%= @profile.exp_num %>years of experience</p>
         <p>Rate: $<%= @profile.rate %>/hr</p>
-        <p>Availbility: <%= @profile.availability %>/hr</p>
+        <p>Availbility: <%= @profile.availability %></p>
         <p>Education: <%= @profile.education %></p>
         <p>Language: <%= @profile.language %></p>
         <p>Transpotation: <%= @profile.transportation %></p>
         <p>Comfortable with pets: <%= @profile.pets %></p>
         <p>Phone: <%= @profile.phone_number %></p>
-
     <h3>Review</h3>
-    <% if @reviews %>
+    <% if @profile.reviews %>
       <% @profile.reviews.each do |r| %>
         <p>Star rating:<%= r.star_rating %></p>
         <p>Dependabiity:<%= r.dependability %></p>
@@ -38,9 +37,9 @@
         <p>Hire Again:<%= r.hire_again %></p>
         <p>Description:<%= r.description%></p>
         <% if r.user != nil %>
-          <em> reviewed by <%= r.user.first_name %></em>
-          <p>Posted at:<%= r.created_at %></p>
+        <p><%= r.user.first_name %></p>
         <% end %>
+          <p>Posted at:<%= r.created_at %></p>
       <% end %>
   <% else %>
     <p> No reviews yet </p>

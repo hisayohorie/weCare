@@ -2,6 +2,8 @@ class ReviewsController < ApplicationController
   before_action :load_profile
     def show
       @review = Review.find(params[:id])
+      @reviewer = self.user
+      # @relevant_bookings = reviewer.bookings.where(profile_id: self.profile_id)
     end
 
     def create

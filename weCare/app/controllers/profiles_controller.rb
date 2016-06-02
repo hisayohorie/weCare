@@ -37,7 +37,7 @@ class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
 
-    @booking = @profile.bookings.last #maybe for testing?
+    # @booking = @profile.bookings.last #maybe for testing?
 
     if current_user
       @review = @profile.reviews.build
@@ -52,7 +52,6 @@ class ProfilesController < ApplicationController
   def create
     @user = current_user
     @profile = @user.build_profile(profile_params)
-
     if @profile.save
       redirect_to profile_path(@profile)
     else
@@ -81,7 +80,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.permit(:user_id, :age, :description, :exp_num, :education, :language, :availability, :travel_propensity, :pets, :address, :rate, :phone_number, :transportation)
+    params.require(:profile).permit(:user_id, :age, :description, :exp_num, :education, :language, :availability, :travel_propensity, :pets, :address, :rate, :phone_number, :transportation)
 
   end
 end
