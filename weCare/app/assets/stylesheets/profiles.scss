@@ -17,6 +17,25 @@
 
 // review partial
 .star_rating {
-  background-image:url("png") 0 0;
   display: inline-block;
+  width: 100%;
+  height: 70px;
+  label {
+    font-size: 0;
+  }
+  .star {
+    font-size: 2rem;
+    color: $green;
+
+  }
+
+  .satisfaction{
+      font-size: 2rem;
+      color: #40E0D0;
+  }
+
+ input {
+    position: absolute;
+
+  }
 }
