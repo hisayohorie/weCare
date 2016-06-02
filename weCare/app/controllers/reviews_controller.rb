@@ -14,14 +14,14 @@ class ReviewsController < ApplicationController
       end
     end
 
-    def destroy
-      @review = Review.find(params[:id])
-      @review.destroy
-    end
-
     def get_form
       @review = Review.new
       render partial: 'reviews/review_form' if current_user
+    end
+
+    def destroy
+      @review = Review.find(params[:id])
+      @review.destroy
     end
 
   private
