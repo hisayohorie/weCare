@@ -4,7 +4,7 @@ $(document).on('ready', function(){
 
     var booking_info = $('form').serialize();
     var profileId = $(this).attr('data-id');
-    alert(profileId);
+    
     $.ajax({
       url: "/profiles/" + profileId + "/bookings",
       method: "POST",

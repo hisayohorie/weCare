@@ -13,11 +13,14 @@
 <div class="advancedSearch" >
     <%= render partial: "profiles/advancedSearch"%>
 </div>
-  <div class= "nearby_babysitters">
+
     <% if @nearby_profiles %>
-    <% @nearby_profiles.each do |p| %>
-      <%= render partial: "profiles/profile", locals: {profile: p} %>
+      <% @nearby_profiles.each do |p| %>
+      <div class= "nearby_babysitters_box" >
+        <%= render partial: "profiles/profile", locals: {profile: p} %>
+      <%end%>
     <%end%>
-  <%end%>
   </div>
+
+
 </div>

@@ -1,5 +1,5 @@
 <div class = "babysitter_profile">
-  <h1>Robositter:</h1>
+  <div class = "babysitter_sidebar">
     <div class = "photo"><%= image_tag @profile.user.photo %>
       <div class="babysitter_booking">
         <p>Book this babysitter:</p>
@@ -13,21 +13,23 @@
       <%# if current_user %>
         <%#= render partial: "reviews/review_form" %>
       <%# end %>
-      </div>
+    </div>
+  </div>
 
     <div id = "profile_info">
-    <h3>About Me</h3>
-        <P><%= @profile.description %></p>
-        <p><%= @profile.age %>years old</p>
-        <p>Experience: <%= @profile.exp_num %>years of experience</p>
-        <p>Rate: $<%= @profile.rate %>/hr</p>
-        <p>Availbility: <%= @profile.availability %></p>
-        <p>Education: <%= @profile.education %></p>
-        <p>Language: <%= @profile.language %></p>
-        <p>Transpotation: <%= @profile.transportation %></p>
-        <p>Comfortable with pets: <%= @profile.pets %></p>
-        <p>Phone: <%= @profile.phone_number %></p>
-    <h3>Review</h3>
+        <h1><%=@profile.user.first_name%> <%=@profile.user.last_name%></h1>
+        <P><span>Description: </span><%= @profile.description %></p>
+        <p><span>Age: </span><%= @profile.age %>years old</p>
+        <p><span>Experience: </span><%= @profile.exp_num %>years of experience</p>
+        <p><span>Rate: </span> $<%= @profile.rate %>/hr</p>
+        <p><span>Availbility: </span> <%= @profile.availability %></p>
+        <p><span>Education: </span><%= @profile.education %></p>
+        <p><span>Language: </span> <%= @profile.language %></p>
+        <p><span>Transpotation: </span><%= @profile.transportation %></p>
+        <p><span>Comfortable with pets: </span><%= @profile.pets %></p>
+        <p><span>Phone: </span> <%= @profile.phone_number %></p>
+  <div class = "reviews">
+    <h1>Reviews:</h1>
     <% if @profile.reviews %>
       <% @profile.reviews.each do |r| %>
         <p>Star rating:<%= r.star_rating %></p>
@@ -44,6 +46,7 @@
   <% else %>
     <p> No reviews yet </p>
   <% end %>
+</div>
 
 
 

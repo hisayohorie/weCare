@@ -112,14 +112,14 @@ h1 {
 
 
 [data-slides] {
-  background-image: url("robocare.jpg");
+  background-image: url("robocare4.jpg");
   background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: contain;
   @include transition(background-image 1s linear);
-  text-align: center;
+  text-align: cover;
   padding: 280px 0 100px;
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   margin: 0;
   top: 10%;

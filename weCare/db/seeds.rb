@@ -53,9 +53,9 @@ endTime =[
 
 rate =[15, 16, 17, 18, 20, 20, 25, 25, 30, 35]
 
-services = ["infant_care", "toddler_care", "tween_care", "teenage_care", "senior_care"].each do |c|
-   Service.create!({category: c})
-end
+# services = ["infant_care", "toddler_care", "tween_care", "teenage_care", "senior_care"].each do |c|
+#    Service.create!({category: c})
+# end
 
 
 
@@ -84,14 +84,14 @@ end
      )
      sleep 2
 
-     babysitter_profiles.services << Service.all.sample
+    #  babysitter_profiles.services << Service.all.sample
 
-     parent.bookings.create!(
-     start_time: startTime[n],
-     end_time: endTime[n],
-     address: "100 College Street, Toronto",
-     confirmation:true,
-     profile_id: babysitter_profiles.id
-     )
+    #  parent.bookings.create!(
+    #  start_time: startTime[n],
+    #  end_time: endTime[n],
+    #  address: "100 College Street, Toronto",
+    #  confirmation:true,
+    #  profile_id: babysitter_profiles.id
+    #  )
 
   end
