@@ -131,3 +131,14 @@ input[type="number"] {
   border-radius: 25px;
 
 }
+
+.ajax_call {
+  padding: 20px;
+  span
+  {
+    color: $green;
+  }
+  p {
+    color: $orange;
+  }
+}
