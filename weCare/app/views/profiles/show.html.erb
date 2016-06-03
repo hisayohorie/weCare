@@ -17,7 +17,7 @@
   </div>
 
     <div id = "profile_info">
-        <h1><%=@profile.user.first_name%> <%=@profile.user.last_name%></h1>
+        <h1><%=@profile.user.first_name.capitalize%> <%=@profile.user.last_name.capitalize%></h1>
         <P><span>Description: </span><%= @profile.description %></p>
         <p><span>Age: </span><%= @profile.age %>years old</p>
         <p><span>Experience: </span><%= @profile.exp_num %>years of experience</p>
