@@ -20,8 +20,5 @@ $(document).on('ready', function(){
       $('.booking_modal').hide();
       $(".modal-dialog").hide();
     });
-
-
-
   });
 });
