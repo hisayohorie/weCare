@@ -4,7 +4,7 @@ $(document).on('ready', function(){
     var profileId = $(this).data('id');
 
     $.ajax({
-      url: '/reviews/showform/' + profileId,
+      url: '/reviews/index/' + profileId,
       method: 'GET',
       success: function(data){
         $('#show_review').append(data).slideDown("slow");

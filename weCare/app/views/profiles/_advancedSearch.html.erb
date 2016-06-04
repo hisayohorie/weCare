@@ -4,7 +4,8 @@
     <%= hidden_field_tag :longitude, @lng %>
     <%= hidden_field_tag :distance, @distance %>
     <%= label :service_id, "Service Categories" %>
-    <%= select_tag :service_id, options_from_collection_for_select(Service.all, "id", "category", params[:service_id])%>
+    <%= select_tag :service_id, options_from_collection_for_select(Service.all, "id", "category"), {:include_blank => true, :multiple => true, :size => 2} %>
+
 
     <%= label :rate, "Rate", id: 'rate_label' %>
     <span>$15</span>

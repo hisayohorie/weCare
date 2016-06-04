@@ -85,7 +85,7 @@ end
      sleep 2
 
      babysitter_profiles.services << Service.all.sample
-     #
+
     #  parent.bookings.create!(
     #  start_time: startTime[n],
     #  end_time: endTime[n],

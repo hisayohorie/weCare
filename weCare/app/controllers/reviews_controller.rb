@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :load_profile
     def show
-      @review = Review.find(params[:id])
+      @review = Review.find(params[:profile_id])
       @reviewer = self.user
       # @relevant_bookings = reviewer.bookings.where(profile_id: self.profile_id)
     end
@@ -16,12 +16,12 @@ class ReviewsController < ApplicationController
       end
     end
 
-    def get_form
+    def new
       @review = Review.new
       render partial: 'reviews/review_form' if current_user
     end
 
-    def show_form
+    def index
       @profile = Profile.find(params[:profile_id])
       @reviews = @profile.reviews
       render partial: 'reviews/show_reviews'
