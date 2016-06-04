@@ -21,6 +21,12 @@ class ReviewsController < ApplicationController
       render partial: 'reviews/review_form' if current_user
     end
 
+    def show_form
+      @profile = Profile.find(params[:profile_id])
+      @reviews = @profile.reviews
+      render partial: 'reviews/show_reviews'
+    end
+
     def destroy
       @review = Review.find(params[:id])
       @review.destroy

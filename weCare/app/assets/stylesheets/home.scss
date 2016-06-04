@@ -83,12 +83,15 @@ h1 {
   a {
     color: $green;
   }
-  #become_caregiver {
-    border: 1px solid white;
-  }
+
   span{
     color: white;
   }
+}
+
+#become_robot a {
+  border: 2px solid white;
+  border-radius: 5px;
 }
 
 #welcome {

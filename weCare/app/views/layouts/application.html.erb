@@ -20,7 +20,7 @@
 
           <% if current_user %>
             <li id = "welcome">Welcome, <%= current_user.first_name.capitalize %> !</li>
-            <li><%= link_to 'Become A Care Giver', new_profile_path(current_user)%></li>
+            <li id = "become_robot"><%= link_to 'Become A Care Giver', new_profile_path(current_user)%></li>
             <li><%= link_to "User Profile", user_path(current_user)%><li>
             <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
           <% else %>

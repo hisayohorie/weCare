@@ -1,7 +1,7 @@
 <div class = "caregiver_form">
   <h1>CareGiver Application Form:</h1>
     <%= form_for Profile.new do |f| %>
-    <p> Welcome, <%= current_user.first_name %> <%= current_user.last_name%></p>
+    <h1> Welcome, <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h1>
 
 
     <p><%= f.label :description %></p>

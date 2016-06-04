@@ -28,31 +28,17 @@
         <p><span>Transpotation: </span><%= @profile.transportation %></p>
         <p><span>Comfortable with pets: </span><%= @profile.pets %></p>
         <p><span>Phone: </span> <%= @profile.phone_number %></p>
-  <div class = "reviews">
-    <h1>Reviews:</h1>
-    <% if @profile.reviews %>
-      <% @profile.reviews.each do |r| %>
-        <p>Star rating:<%= r.star_rating %></p>
-        <p>Dependabiity:<%= r.dependability %></p>
-        <p>Punctuality:<%= r.punctuality %></p>
-        <p>Reliable transportation<%= r.reliable_transportation %></p>
-        <p>Hire Again:<%= r.hire_again %></p>
-        <p>Description:<%= r.description%></p>
-        <% if r.user != nil %>
-        <p><%= r.user.first_name %></p>
-        <% end %>
-          <p>Posted at:<%= r.created_at %></p>
-      <% end %>
-  <% else %>
-    <p> No reviews yet </p>
-  <% end %>
-</div>
+
+  <div id = "show_review">
+    <button id = "view_review" data-id = "<%= @profile.id %>"> View Reviews(<%= @profile.reviews.length%>)</button>
+    <%#= render partial: 'reviews/show_reviews' %>
+  </div>
 
 
 
     <div class = "modal-dialog">
       <div class = "booking_modal">
-          <button type="button" class="close">x</button>
+          <button type="button" class="close">Close</button>
           <%= render partial: "bookings/booking"%>
       </div>
     </div>

@@ -1,0 +1,21 @@
+
+<div class = "reviews">
+  <button type = "button" class = "close">Close</button>
+  <h1>Reviews:</h1>
+  <% if @profile.reviews %>
+    <% @profile.reviews.each do |r| %>
+      <p>Star rating:<%= r.star_rating %></p>
+      <p>Dependabiity:<%= r.dependability %></p>
+      <p>Punctuality:<%= r.punctuality %></p>
+      <p>Reliable transportation<%= r.reliable_transportation %></p>
+      <p>Hire Again:<%= r.hire_again %></p>
+      <p>Description:<%= r.description%></p>
+      <% if r.user != nil %>
+      <p><%= r.user.first_name %></p>
+      <% end %>
+        <p>Posted at:<%= r.created_at %></p>
+    <% end %>
+<% else %>
+  <p> No reviews yet </p>
+<% end %>
+</div>

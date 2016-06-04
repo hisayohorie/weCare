@@ -61,7 +61,7 @@ $(document).on('ready', function(){
 function bindFormToAjaxPost($form, profileId){
   $form.on('submit', function(e){
     e.preventDefault();
-    debugger
+
     $.ajax({
       url: '/profiles/' + profileId + '/reviews',
       method: 'POST',

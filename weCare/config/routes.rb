@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   get '/reviews/getform/:profile_id' => 'reviews#get_form'
+  get '/reviews/showform/:profile_id' => 'reviews#show_form'
 
 
   # resources :services
