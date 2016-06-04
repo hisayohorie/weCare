@@ -4,7 +4,7 @@ $(document).on('ready', function(){
 
     var booking_info = $('form').serialize();
     var profileId = $(this).attr('data-id');
-    
+
     $.ajax({
       url: "/profiles/" + profileId + "/bookings",
       method: "POST",
@@ -13,10 +13,12 @@ $(document).on('ready', function(){
       success: function(data){
         $('.booking_modal').html(data);
       }
+
     });
 
-    $('.close').on('click', function(){
+    $('body').on('click', '.close', function(){
       $('.booking_modal').hide();
+      $(".modal-dialog").hide();
     });
   });
 });

@@ -1,8 +1,9 @@
-<h4>New Review</h4>
+
 <%= form_for([@profile, @review]) do |f| %>
   <div class = "rating_form">
-    <p>how you rate this robot?</p>
+    <p>Rate a Robot you worked with!</p>
     <span class="star_rating">
+<<<<<<< HEAD
       <%= f.label  :star_rating_1 do %>
         <i class="fa fa-star star"  aria-hidden="true" id="one-star"></i>
         <%= f.radio_button :star_rating, 1 %>
@@ -14,6 +15,9 @@
       <% end %>
 
       <%= f.label  :star_rating_3 do %>
+=======
+      <%= f.label :star_rating %>
+>>>>>>> 0d9fb3c029f76be24f160d4484abec66c99998b1
         <i class="fa fa-star star"  aria-hidden="true" id="one-star"></i>
         <%= f.radio_button :star_rating, 1 %>
       <% end %>
@@ -30,6 +34,7 @@
     </span>
     
   </div>
+  
   <div class = "review_description">
     <%= f.label :description %>
     <%= f.text_area :description %>

@@ -13,7 +13,10 @@ Rails.application.routes.draw do
     resources :reviews, only: [:show, :create, :destroy]
   end
 
+
   get '/reviews/new/:profile_id' => 'reviews#new'
+  get '/reviews/showform/:profile_id' => 'reviews#index'
+
 
 
   # resources :services

@@ -9,7 +9,7 @@
     <% end %>
   </div>
   <div class = "profile_info">
-    <p><<%= profile.user.first_name%> <%= profile.user.last_name%></p>
+    <p><<%= profile.user.first_name.capitalize%> <%= profile.user.last_name.capitalize%></p>
     <p><%= profile.age %>years old</p>
     <p><%= profile.display_distance_to([@lat, @lng]).round(2)%>kms away</p>
     <p><%= button_to 'more info', profile_path(profile), method: :get%></p>
