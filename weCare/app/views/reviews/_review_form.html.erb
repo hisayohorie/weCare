@@ -4,20 +4,28 @@
     <p>how you rate this robot?</p>
     <span class="star_rating">
 
-      <%= f.label :star_rating %>
+      <label for "one-star">
+      <%= f.label  :star_rating do %>
         <i class="fa fa-star star"  aria-hidden="true" id="one-star"></i>
+      <% end %>
       <%= f.radio_button :star_rating, 1, id: "rating-1" %>
-      <%= f.label :star_rating %>
+      </label>
+
+      <%= f.label :star_rating do %>
         <i class="fa fa-star star"  aria-hidden="true" id="two-star"></i>
+      <% end %>
       <%= f.radio_button :star_rating, 2, id: "rating-2"%>
-      <%= f.label :star_rating %>
+      <%= f.label :star_rating do %>
           <i class="fa fa-star star" aria-hidden="true" id="three-star"></i>
+      <% end %>
       <%= f.radio_button :star_rating, 3, id: "rating-3"%>
-      <%= f.label :star_rating %>
+      <%= f.label :star_rating do %>
         <i class="fa fa-star star" aria-hidden="true" id="four-star"></i>
+      <% end %>
       <%= f.radio_button :star_rating, 4, id: "rating-4"%>
-      <%= f.label :star_rating %>
+      <%= f.label :star_rating do %>
         <i class="fa fa-star star" aria-hidden="true" id="five-star"></i>
+      <% end %>
       <%= f.radio_button :star_rating, 5, id: "rating-5" %>
     </span>
   </div>
