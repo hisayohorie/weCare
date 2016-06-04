@@ -25,31 +25,31 @@ addresses =[
 
 ]
 
-# startTime =[
-#   DateTime.new(2016,6,1,15,00),
-#   DateTime.new(2016,6,1,16,00),
-#   DateTime.new(2016,6,1,17,00),
-#   DateTime.new(2016,6,2,15,00),
-#   DateTime.new(2016,6,2,16,00),
-#   DateTime.new(2016,6,2,17,00),
-#   DateTime.new(2016,6,3,15,00),
-#   DateTime.new(2016,6,3,16,00),
-#   DateTime.new(2016,6,3,17,00),
-#   DateTime.new(2016,6,4,15,00)
-# ]
-#
-# endTime =[
-#   DateTime.new(2016,6,1,16,00),
-#   DateTime.new(2016,6,1,18,00),
-#   DateTime.new(2016,6,1,20,00),
-#   DateTime.new(2016,6,2,18,00),
-#   DateTime.new(2016,6,2,19,00),
-#   DateTime.new(2016,6,2,20,00),
-#   DateTime.new(2016,6,3,17,00),
-#   DateTime.new(2016,6,3,18,00),
-#   DateTime.new(2016,6,3,20,00),
-#   DateTime.new(2016,6,4,17,00)
-# ]
+startTime =[
+  DateTime.new(2016,6,5,15,00),
+  DateTime.new(2016,6,5,16,00),
+  DateTime.new(2016,6,5,17,00),
+  DateTime.new(2016,6,5,15,00),
+  DateTime.new(2016,6,5,16,00),
+  DateTime.new(2016,6,6,17,00),
+  DateTime.new(2016,6,6,15,00),
+  DateTime.new(2016,6,6,16,00),
+  DateTime.new(2016,6,6,17,00),
+  DateTime.new(2016,6,6,15,00)
+]
+
+endTime =[
+  DateTime.new(2016,6,5,16,00),
+  DateTime.new(2016,6,5,18,00),
+  DateTime.new(2016,6,5,20,00),
+  DateTime.new(2016,6,5,18,00),
+  DateTime.new(2016,6,5,19,00),
+  DateTime.new(2016,6,6,20,00),
+  DateTime.new(2016,6,6,17,00),
+  DateTime.new(2016,6,6,18,00),
+  DateTime.new(2016,6,6,20,00),
+  DateTime.new(2016,6,6,17,00)
+]
 
 rate =[15, 16, 17, 18, 20, 20, 25, 25, 30, 35]
 
@@ -84,7 +84,7 @@ end
      )
      sleep 2
 
-    #  babysitter_profiles.services << Service.all.sample
+     babysitter_profiles.services << Service.all.sample
      #
     #  parent.bookings.create!(
     #  start_time: startTime[n],

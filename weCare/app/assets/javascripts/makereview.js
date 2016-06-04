@@ -25,6 +25,9 @@ function bindFormToAjaxPost($form, profileId){
       dataType: "HTML",
       success: function(data) {
        $('.reviews').append($form);
+       alert("review has been created successfully!");
+      //  $('.reviewContainer').fadeOut();
+
        $('#makeReview').fadeIn();
 
       }
