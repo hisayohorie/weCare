@@ -25,37 +25,37 @@ addresses =[
 
 ]
 
-startTime =[
-  DateTime.new(2016,6,1,15,00),
-  DateTime.new(2016,6,1,16,00),
-  DateTime.new(2016,6,1,17,00),
-  DateTime.new(2016,6,2,15,00),
-  DateTime.new(2016,6,2,16,00),
-  DateTime.new(2016,6,2,17,00),
-  DateTime.new(2016,6,3,15,00),
-  DateTime.new(2016,6,3,16,00),
-  DateTime.new(2016,6,3,17,00),
-  DateTime.new(2016,6,4,15,00)
-]
-
-endTime =[
-  DateTime.new(2016,6,1,16,00),
-  DateTime.new(2016,6,1,18,00),
-  DateTime.new(2016,6,1,20,00),
-  DateTime.new(2016,6,2,18,00),
-  DateTime.new(2016,6,2,19,00),
-  DateTime.new(2016,6,2,20,00),
-  DateTime.new(2016,6,3,17,00),
-  DateTime.new(2016,6,3,18,00),
-  DateTime.new(2016,6,3,20,00),
-  DateTime.new(2016,6,4,17,00)
-]
+# startTime =[
+#   DateTime.new(2016,6,1,15,00),
+#   DateTime.new(2016,6,1,16,00),
+#   DateTime.new(2016,6,1,17,00),
+#   DateTime.new(2016,6,2,15,00),
+#   DateTime.new(2016,6,2,16,00),
+#   DateTime.new(2016,6,2,17,00),
+#   DateTime.new(2016,6,3,15,00),
+#   DateTime.new(2016,6,3,16,00),
+#   DateTime.new(2016,6,3,17,00),
+#   DateTime.new(2016,6,4,15,00)
+# ]
+#
+# endTime =[
+#   DateTime.new(2016,6,1,16,00),
+#   DateTime.new(2016,6,1,18,00),
+#   DateTime.new(2016,6,1,20,00),
+#   DateTime.new(2016,6,2,18,00),
+#   DateTime.new(2016,6,2,19,00),
+#   DateTime.new(2016,6,2,20,00),
+#   DateTime.new(2016,6,3,17,00),
+#   DateTime.new(2016,6,3,18,00),
+#   DateTime.new(2016,6,3,20,00),
+#   DateTime.new(2016,6,4,17,00)
+# ]
 
 rate =[15, 16, 17, 18, 20, 20, 25, 25, 30, 35]
 
-# services = ["infant_care", "toddler_care", "tween_care", "teenage_care", "senior_care"].each do |c|
-#    Service.create!({category: c})
-# end
+services = ["infant_care", "toddler_care", "tween_care", "teenage_care", "senior_care"].each do |c|
+   Service.create!({category: c})
+end
 
 
 
@@ -85,7 +85,7 @@ rate =[15, 16, 17, 18, 20, 20, 25, 25, 30, 35]
      sleep 2
 
     #  babysitter_profiles.services << Service.all.sample
-
+     #
     #  parent.bookings.create!(
     #  start_time: startTime[n],
     #  end_time: endTime[n],

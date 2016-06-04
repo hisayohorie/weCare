@@ -33,7 +33,7 @@ h1 {
   background-color: $orange;
   position: absolute;
   padding: 5px 0;
-  z-index: 1;
+  z-index: $zindexNav;
   top: 0;
   left: 0;
   right: 0;

@@ -7,7 +7,8 @@ $(document).on('ready', function(){
       url: '/reviews/showform/' + profileId,
       method: 'GET',
       success: function(data){
-        $('#show_review').append(data);
+        $('#show_review').append(data).slideDown("slow");
+
         $('.close').on('click', function(){
         $('.reviews').hide();
       });
