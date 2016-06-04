@@ -17,9 +17,10 @@ class ProfilesController < ApplicationController
         @lat = params[:latitude]
         @lng = params[:longitude]
         @distance = params[:distance]
-        @nearby_profiles = Profile.near([@lat, @lng]).joins(:services).where("rate <= ?", params[:rate]).where(services: {id: params[:service_id]} )
-
-
+        @nearby_profiles = Profile.near([@lat, @lng], params[:distance]).joins(:services).where("rate <= ?", params[:rate]).where(services: {id: params[:service_id]} )
+        # @nearby_profiles = Profile.near([@lat, @lng]).joins(:services).where("rate <= ?", params[:rate])
+        # Profile.near([@lat, @lng]).joins(:services).where("rate <= ?", params[:rate]).where(services: {id: params[:service_id]} )
+         #Profile.joins(:services).where(services: {id: params[:service_id] } )
       elsif params[:latitude] && params[:longitude] && params[:distance]
          @lat = params[:latitude]
          @lng= params[:longitude]
