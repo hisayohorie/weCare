@@ -47,7 +47,7 @@ $(document).on('ready', function(){
   $('#makeReview').on('click', function(){
     var profileId = $(this).data('id');
     $.ajax({
-      url: '/reviews/getform/' + profileId,
+      url: '/reviews/new/' + profileId,
       method: 'GET',
       success: function(data) { $('#reviewContainer').html(data);
         bindFormToAjaxPost($('#new_review'), profileId);

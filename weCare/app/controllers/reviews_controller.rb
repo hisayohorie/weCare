@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
       end
     end
 
-    def get_form
+    def new
       @review = Review.new
       render partial: 'reviews/review_form' if current_user
     end
