@@ -17,8 +17,10 @@ class ReviewsController < ApplicationController
     end
 
     def new
+      if current_user
       @review = Review.new
-      render partial: 'reviews/review_form' if current_user
+      render partial: 'reviews/review_form'
+      end
     end
 
     def index

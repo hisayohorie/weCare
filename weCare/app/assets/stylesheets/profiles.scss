@@ -30,6 +30,8 @@
 }
 
 // review partial
+.rating_form {
+}
 .star_rating {
   display: inline-block;
   width: 100%;
@@ -40,17 +42,10 @@
   .star {
     font-size: 2rem;
     color: $green;
-
-  }
-
-
-  .satisfaction{
-      font-size: 2rem;
-      color: #40E0D0;
   }
 
  input {
-    position: absolute;
+  display: none;
 
   }
 }

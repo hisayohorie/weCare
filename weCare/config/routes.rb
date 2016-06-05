@@ -10,18 +10,13 @@ Rails.application.routes.draw do
   resources :users, except: [:index]
   resources :profiles do
     resources :bookings
-    resources :reviews, only: [:show, :create, :destroy]
+    resources :reviews, only: [:index, :new, :show, :create, :destroy]
   end
 
 
-  get '/reviews/new/:profile_id' => 'reviews#new'
-  get '/reviews/showform/:profile_id' => 'reviews#index'
+  # get '/reviews/new/:profile_id' => 'reviews#new'
+  # get '/reviews/showform/:profile_id' => 'reviews#index'
 
-
-
-  # resources :services
-
-  # resources :bookings, only: [:new, :create, :destroy]
 
 
 

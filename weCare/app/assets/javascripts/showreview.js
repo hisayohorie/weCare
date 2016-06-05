@@ -4,7 +4,7 @@ $(document).on('ready', function(){
     var profileId = $(this).data('id');
 
     $.ajax({
-      url: '/reviews/index/' + profileId,
+      url: '/profiles/'+profileId+'/reviews/',
       method: 'GET',
       success: function(data){
         $('#show_review').append(data);
