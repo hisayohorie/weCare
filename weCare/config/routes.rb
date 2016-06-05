@@ -1,23 +1,21 @@
 Rails.application.routes.draw do
 
-  root "pages#home"
-  get 'sign_up', to: 'users#new', as: :sign_up
-  get 'log_in', to: 'sessions#new', as: :log_in
-  post 'sessions', to: 'sessions#create'
-  delete 'log_out', to: 'sessions#destroy', as: :log_out
+ root "pages#home"
+ get 'sign_up', to: 'users#new', as: :sign_up
+ get 'log_in', to: 'sessions#new', as: :log_in
+ post 'sessions', to: 'sessions#create'
+ delete 'log_out', to: 'sessions#destroy', as: :log_out
 
 
-  resources :users, except: [:index]
-  resources :profiles do
-    resources :bookings
-    resources :reviews, only: [:index, :new, :show, :create, :destroy]
-  end
+ resources :users, except: [:index]
+ resources :profiles do
+   resources :bookings
+   resources :reviews, only: [:show, :create, :destroy]
+ end
 
 
-  # get '/reviews/new/:profile_id' => 'reviews#new'
-  # get '/reviews/showform/:profile_id' => 'reviews#index'
-
-
+ get '/reviews/new/:profile_id' => 'reviews#new'
+ get '/reviews/index/:profile_id' => 'reviews#index'
 
 
 

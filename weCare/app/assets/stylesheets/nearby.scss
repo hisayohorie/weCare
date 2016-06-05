@@ -23,7 +23,7 @@
     transition: all 0.2s ease-in-out;
     flex-direction: row;
 
-    @for $i from 1 to 8 {
+    @for $i from 1 to 11 {
 // assign colors from $flex-box-top-colors list
       &:nth-child(#{$i}) {
         $color-from-list: nth($flex-box-top-colors, $i);

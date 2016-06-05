@@ -1,0 +1,26 @@
+<span class="star_rating">
+  <%= f.label type + '_1', :class => 'star-label' do %>
+    <i class="fa fa-star star"  aria-hidden="true" id="one-star"></i>
+    <%= f.radio_button type, 1 %>
+  <% end %>
+
+  <%= f.label type + '_2', :class => 'star-label' do %>
+    <i class="fa fa-star star"  aria-hidden="true" id="two-star"></i>
+    <%= f.radio_button type, 2 %>
+  <% end %>
+
+  <%= f.label  type + '_3', :class => 'star-label' do %>
+    <i class="fa fa-star star"  aria-hidden="true" id="one-star"></i>
+    <%= f.radio_button type, 3 %>
+  <% end %>
+
+  <%= f.label type + '_4', :class => 'star-label' do %>
+    <i class="fa fa-star star"  aria-hidden="true" id="two-star"></i>
+    <%= f.radio_button type, 4 %>
+  <% end %>
+
+  <%= f.label type + '_5', :class => 'star-label' do %>
+    <i class="fa fa-star star"  aria-hidden="true" id="two-star"></i>
+    <%= f.radio_button type, 5 %>
+  <% end %>
+</span>

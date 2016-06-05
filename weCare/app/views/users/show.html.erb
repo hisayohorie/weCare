@@ -1,4 +1,4 @@
-<div class = "user_show">
+
   <div class="user_info">
     <ul>
       <li><%= @user.photo %></li>
@@ -10,7 +10,7 @@
 
 
     <% if @user.profile %>
-    <div class="user_profile">
+    <div class = "user_info" id ="user_profile">
       <ul>
         <li>Description:<%= @user.profile.description %></li>
         <li>Experience: <%= @user.profile.exp_num %></li>
@@ -27,7 +27,7 @@
     </div>
 
   <% if @user.bookings %>
-  <div class = "bookings_you_made">
+  <div class = "user_info" id = "bookings_you_made">
     <h1>Your bookings:</h1>
     <% @user.bookings.each do |b| %>
       <ul>
@@ -44,7 +44,7 @@
   </div>
 
   <% if @user.profile %>
-  <div class="booking_request">
+  <div class= "user_info" id = "booking_request">
     <h1>Bookings requested for you:</h1>
     <% @user.profile.bookings.each do |b| %>
       <p>Name: <%= b.user.first_name %><% b.user.last_name %></p>
@@ -61,4 +61,3 @@
   <% end %>
 
   </div>
-</div>
