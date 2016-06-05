@@ -1,16 +1,120 @@
 <%= form_for([@profile, @review]) do |f| %>
   <div class = "rating_form">
     <p>Rate a Robot you worked with!</p>
-
-    <% ['star_rating', 'dependability', 'reliable_transportation', 'punctuality'].each do |type| %>
-      <%= render "star_radio_buttons", :type => type, :f => f %>
-    <% end %>
+    <span class="star_rating"><p>Star rating</p>
+        <%= f.label  :star_rating_1, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="one-star"></i>
+          <%= f.radio_button :star_rating, 1 %>
+        <% end %>
+          <%= f.label :star_rating_2, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="two-star"></i>
+          <%= f.radio_button :star_rating, 2 %>
+          <% end %>
+         <%= f.label  :star_rating_3, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="three-star"></i>
+          <%= f.radio_button :star_rating, 3 %>
+        <% end %>
+        <%= f.label :star_rating_4, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="four-star"></i>
+          <%= f.radio_button :star_rating, 4 %>
+         <% end %>
+       <%= f.label  :star_rating_5, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="five-star"></i>
+          <%= f.radio_button :star_rating, 5 %>
+       <% end %>
+    </span><br>
+    <span class="dependability"><p>Depedability</p>
+        <%= f.label  :dependability_1, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="dependability_1"></i>
+          <%= f.radio_button :dependability, 1 %>
+        <% end %>
+        <%= f.label  :dependability_2, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="dependability_2"></i>
+          <%= f.radio_button :dependability, 2 %>
+        <% end %>
+        <%= f.label  :dependability_3, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="dependability_3"></i>
+          <%= f.radio_button :dependability, 3 %>
+        <% end %>
+        <%= f.label  :dependability_4, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="dependability_4"></i>
+          <%= f.radio_button :dependability, 4 %>
+        <% end %>
+        <%= f.label  :dependability_5, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="dependability_5"></i>
+          <%= f.radio_button :dependability, 5 %>
+        <% end %>
+    </span><br>
+    <span class="punctuality"><p>Punctuality</p>
+        <%= f.label  :punctuality_1, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="punctuality_1"></i>
+          <%= f.radio_button :punctuality, 1 %>
+        <% end %>
+        <%= f.label  :punctuality_2, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="punctuality_2"></i>
+          <%= f.radio_button :punctuality, 2 %>
+        <% end %>
+        <%= f.label  :punctuality_3, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="punctuality_3"></i>
+          <%= f.radio_button :dependability, 3 %>
+        <% end %>
+        <%= f.label  :punctuality_4, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="punctuality_4"></i>
+          <%= f.radio_button :punctuality, 4 %>
+        <% end %>
+        <%= f.label  :punctuality_5, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="punctuality_5"></i>
+          <%= f.radio_button :punctuality, 5 %>
+        <% end %>
+      </spn><br>
+        <span class="reliable_transportation"><p>Reliable transportation</p>
+            <%= f.label  :reliable_transportation_1, class:"stars" do %>
+              <i class="fa fa-star star"  aria-hidden="true" id="reliable_transportation_1"></i>
+              <%= f.radio_button :punctuality, 1 %>
+            <% end %>
+            <%= f.label  :reliable_transportation_2, class:"stars" do %>
+              <i class="fa fa-star star"  aria-hidden="true" id="reliable_transportation_2"></i>
+              <%= f.radio_button :reliable_transportation, 2 %>
+            <% end %>
+            <%= f.label  :reliable_transportation_3, class:"stars" do %>
+              <i class="fa fa-star star"  aria-hidden="true" id="reliable_transportation_3"></i>
+              <%= f.radio_button :reliable_transportation, 3 %>
+            <% end %>
+            <%= f.label  :reliable_transportation_4, class:"stars" do %>
+              <i class="fa fa-star star"  aria-hidden="true" id="reliable_transportation_4"></i>
+              <%= f.radio_button :reliable_transportation, 4 %>
+            <% end %>
+            <%= f.label  :reliable_transportation_5, class:"stars" do %>
+              <i class="fa fa-star star"  aria-hidden="true" id="reliable_transportation_5"></i>
+              <%= f.radio_button :reliable_transportation, 5 %>
+            <% end %>
+    </span><br>
+    <span class="hire_again"><p>Hire again</p>
+        <%= f.label  :hire_again_1, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="hire_again_1"></i>
+          <%= f.radio_button :hire_again, 1 %>
+        <% end %>
+        <%= f.label  :hire_again_2, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="hire_again_2"></i>
+          <%= f.radio_button :hire_again, 2 %>
+        <% end %>
+        <%= f.label  :hire_again_3, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="hire_again_3"></i>
+          <%= f.radio_button :hire_again, 3 %>
+        <% end %>
+        <%= f.label  :hire_again_4, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="hire_again_4"></i>
+          <%= f.radio_button :hire_again, 4 %>
+        <% end %>
+        <%= f.label  :hire_again_5, class:"stars" do %>
+          <i class="fa fa-star star"  aria-hidden="true" id="hire_again_5"></i>
+          <%= f.radio_button :hire_again, 5 %>
+        <% end %>
+</span><br>
   </div>
-
   <div class = "review_description">
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
-
-  <%= f.submit %>
+<%= f.submit %>
 <% end %>

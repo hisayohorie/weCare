@@ -7,11 +7,11 @@ class ReviewsController < ApplicationController
     end
 
     def create
-      p 'increate'
+      # p 'increate'
       @review = @profile.reviews.build(review_params)
       @review.user = current_user
       if @review.save
-        p 'redirecting'
+        # p 'redirecting'
         redirect_to profile_url(@profile), notice: 'Thank you for your review!'
       else
         render 'profiles/show'
