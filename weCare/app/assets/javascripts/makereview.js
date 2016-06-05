@@ -5,10 +5,13 @@ $(document).on('ready', function(){
     $.ajax({
       url: '/reviews/new/' + profileId,
       method: 'GET',
-      success: function(data) { $('#reviewContainer').html(data);
+      success: function(data) {
+        $('#reviewContainer').html(data);
         bindFormToAjaxPost($('#new_review'), profileId);
-        $('#makeReview').fadeOut(function(){ $('#reviewContainer').slideDown();
-          })
+        $('#makeReview').fadeOut(function(){
+          $('#reviewContainer').slideDown();
+        });
+        bindStarlabel();
       }
     });
   });
@@ -16,7 +19,6 @@ $(document).on('ready', function(){
 
 function bindFormToAjaxPost($form, profileId){
   $form.on('submit', function(e){
-    e.preventDefault();
 
     $.ajax({
       url: '/profiles/' + profileId + '/reviews',
@@ -24,15 +26,14 @@ function bindFormToAjaxPost($form, profileId){
       data: $form.serialize(),
       dataType: "HTML",
       success: function(data) {
-       $('.reviews').append($form);
-       alert("review has been created successfully!");
-      //  $('.reviewContainer').fadeOut();
 
-       $('#makeReview').fadeIn();
-
+        $('#new_review').slideUp(function(){
+        $('#makeReview').fadeIn();
+        });
       }
+     });
 
-    });
-          return false
+     e.preventDefault();
   });
+
 }

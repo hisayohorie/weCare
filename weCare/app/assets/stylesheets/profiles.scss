@@ -37,13 +37,16 @@
   height: 70px;
   label {
     font-size: 0;
-  }
-  .star {
-    font-size: 2rem;
-    color: $green;
 
-  }
+    .star {
+      font-size: 2rem;
+      color: $green;
+    }
 
+    &.selected .star {
+      color: $orange;
+    }
+  }
 
   .satisfaction{
       font-size: 2rem;
@@ -52,6 +55,6 @@
 
  input {
     position: absolute;
-
+    display: none;
   }
 }

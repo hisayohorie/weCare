@@ -7,9 +7,11 @@ class ReviewsController < ApplicationController
     end
 
     def create
+      p 'increate'
       @review = @profile.reviews.build(review_params)
       @review.user = current_user
       if @review.save
+        p 'redirecting'
         redirect_to profile_url(@profile), notice: 'Thank you for your review!'
       else
         render 'profiles/show'
@@ -18,7 +20,12 @@ class ReviewsController < ApplicationController
 
     def new
       @review = Review.new
-      render partial: 'reviews/review_form' if current_user
+
+      if !current_user
+        return render partial: 'reviews/not_logged_in'
+      end
+
+      render partial: 'reviews/review_form'
     end
 
     def index

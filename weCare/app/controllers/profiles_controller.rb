@@ -1,9 +1,6 @@
 
 class ProfilesController < ApplicationController
-
-
   def index
-
       if params[:search]
         location = Geocoder.search(params[:search])
         location_result = location.first.geometry["location"]

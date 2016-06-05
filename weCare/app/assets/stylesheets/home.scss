@@ -31,7 +31,7 @@ h1 {
 
 .nav {
   background-color: $orange;
-  position: absolute;
+  position: fixed;
   padding: 5px 0;
   z-index: $zindexNav;
   top: 0;
@@ -132,7 +132,12 @@ h1 {
   top: 10%;
 
   h1 {
+    color: $orange;
     margin-bottom: 40px;
   }
 
+}
+
+.flashMessage {
+  padding-top: 70px;
 }

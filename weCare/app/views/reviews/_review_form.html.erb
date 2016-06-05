@@ -1,44 +1,16 @@
-
 <%= form_for([@profile, @review]) do |f| %>
   <div class = "rating_form">
     <p>Rate a Robot you worked with!</p>
-    <span class="star_rating">
-<<<<<<< HEAD
-      <%= f.label  :star_rating_1 do %>
-        <i class="fa fa-star star"  aria-hidden="true" id="one-star"></i>
-        <%= f.radio_button :star_rating, 1 %>
-      <% end %>
 
-      <%= f.label :star_rating_2 do %>
-        <i class="fa fa-star star"  aria-hidden="true" id="two-star"></i>
-        <%= f.radio_button :star_rating, 2 %>
-      <% end %>
-
-      <%= f.label  :star_rating_3 do %>
-=======
-      <%= f.label :star_rating %>
->>>>>>> 0d9fb3c029f76be24f160d4484abec66c99998b1
-        <i class="fa fa-star star"  aria-hidden="true" id="one-star"></i>
-        <%= f.radio_button :star_rating, 1 %>
-      <% end %>
-
-      <%= f.label :star_rating_4 do %>
-        <i class="fa fa-star star"  aria-hidden="true" id="two-star"></i>
-        <%= f.radio_button :star_rating, 2 %>
-      <% end %>
-
-      <%= f.label :star_rating_5 do %>
-        <i class="fa fa-star star"  aria-hidden="true" id="two-star"></i>
-        <%= f.radio_button :star_rating, 2 %>
-      <% end %>
-    </span>
-    
+    <% ['star_rating', 'dependability', 'reliable_transportation', 'punctuality'].each do |type| %>
+      <%= render "star_radio_buttons", :type => type, :f => f %>
+    <% end %>
   </div>
-  
+
   <div class = "review_description">
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
 
-<%= f.submit %>
+  <%= f.submit %>
 <% end %>

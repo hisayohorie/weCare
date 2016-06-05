@@ -1,6 +1,5 @@
 $(document).on('ready', function(){
   $('#view_review').on('click', function(){
-    // alert("it works!");
     var profileId = $(this).data('id');
 
     $.ajax({

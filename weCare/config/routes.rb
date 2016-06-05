@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
 
   get '/reviews/new/:profile_id' => 'reviews#new'
-  get '/reviews/showform/:profile_id' => 'reviews#index'
+  get '/reviews/index/:profile_id' => 'reviews#index'
 
 
 
