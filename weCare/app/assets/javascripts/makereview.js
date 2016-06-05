@@ -1,47 +1,3 @@
-// $(document).on('ready', function(){
-//   $('#makeReview').on('click', function() {
-//     var profileId = $(this).data('id');
-//     $.ajax({
-//       url: '/reviews/getform/'+profileId,
-//       method: 'GET',
-//       success: function(data) {
-//         $('#reviewContainer').html(data);
-//         $('#makeReview').fadeOut(function() {
-//         $('#reviewContainer').slideDown();
-//         });
-//       }
-//     });
-//   });
-// });
-
-//
-// $(document).on('ready', function(){
-// $('#makeReview').on('click', function(){
-//   var profileId = $(this).data('id');
-//   $.ajax({
-//     url: '/reviews/getform/' + profileId,
-//     method: 'GET',
-//     success: function(data) { $('#reviewContainer').html(data);
-//       bindFormToAjaxPost($('new_form'), profileId);
-//       $('#makeReview').fadeOut(function(){ $('#reviewContainer').slideDown();
-//         })
-//     }
-//     });
-//
-//     bindFormToAjaxPost($form, profileId)({
-//       $('#new_review').on('submit', function(){
-//         var $form = $("#new_review");
-//         $.ajax({
-//           url: '/profiles/' + profileId + '/reviews/new',
-//           method: 'POST',
-//           data: $form,
-//           dataType: "HTML"
-//         });
-//         });
-//     })
-//   });
-// });
-
 
 $(document).on('ready', function(){
   $('#makeReview').on('click', function(){
@@ -99,6 +55,11 @@ function bindFormToAjaxPost($form, profileId){
       dataType: "HTML",
       success: function(data) {
        $('.reviews').append($form);
+       alert("review has been created successfully!");
+      //  $('.reviewContainer').fadeOut();
+
+       $('#makeReview').fadeIn();
+
       }
 
     });

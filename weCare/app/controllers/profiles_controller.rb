@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
         @nearby_profiles = Profile.near([@lat, @lng], params[:distance], units: :km)
 
 
-      elsif params[:service_id] && params[:rate] && params[:distance]
+      elsif params[:service_id] && params[:rate] && params[:distance] && params[:service_id]
         @lat = params[:latitude]
         @lng = params[:longitude]
         @distance = params[:distance]

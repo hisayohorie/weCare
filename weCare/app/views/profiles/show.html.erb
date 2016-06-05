@@ -19,6 +19,7 @@
     <div id = "profile_info">
         <h1><%=@profile.user.first_name.capitalize%> <%=@profile.user.last_name.capitalize%></h1>
         <P><span>Description: </span><%= @profile.description %></p>
+        <p><span>Services: </span><%= @profile.services.last.category %></p>
         <p><span>Age: </span><%= @profile.age %>years old</p>
         <p><span>Experience: </span><%= @profile.exp_num %>years of experience</p>
         <p><span>Rate: </span> $<%= @profile.rate %>/hr</p>
@@ -28,11 +29,10 @@
         <p><span>Transpotation: </span><%= @profile.transportation %></p>
         <p><span>Comfortable with pets: </span><%= @profile.pets %></p>
         <p><span>Phone: </span> <%= @profile.phone_number %></p>
-
-  <div id = "show_review">
-    <button id = "view_review" data-id = "<%= @profile.id %>"> View Reviews(<%= @profile.reviews.length%>)</button>
+    <div id = "show_review">
+      <button id = "view_review" data-id = "<%= @profile.id %>"> View Reviews(<%= @profile.reviews.length%>)</button>
     <%#= render partial: 'reviews/show_reviews' %>
-  </div>
+    </div>
 
 
 
@@ -44,4 +44,4 @@
     </div>
     </div>
 
-</div>
+  </div>
