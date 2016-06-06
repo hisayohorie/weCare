@@ -1,0 +1,14 @@
+<h2>Review</h2>
+  <p>Star rating:<%= @review.star_rating.times do  %>
+        <i class="fa fa-star star"  aria-hidden="true"></i>
+      <% end %>
+  </p>
+  <p>Dependabiity:<%= @review.dependability %></p>
+  <p>Punctuality:<%= @review.punctuality %></p>
+  <p>Reliable transportation<%= @review.reliable_transportation %></p>
+  <p>Hire Again:<%= @review.hire_again %></p>
+  <p>Description:<%= @review.description%></p>
+  <% if @review.user != nil %>
+  <p><%= @review.user.first_name %></p>
+  <% end %>
+    <p>Posted at:<%= @review.created_at %></p>

@@ -1,5 +1,6 @@
 
 $(document).on('ready', function(){
+  console.log('hello!');
   $('#makeReview').on('click', function(){
     var profileId = $(this).data('id');
     $.ajax({
@@ -115,14 +116,19 @@ function star_check(){
 }
 function bindFormToAjaxPost($form, profileId){
   $form.on('submit', function(e){
+    var reviewData = $form.serialize();
     $.ajax({
       url: '/profiles/' + profileId + '/reviews',
       method: 'POST',
-      data: $form.serialize(),
+      data: reviewData,
       dataType: "HTML",
       success: function(data) {
         $('#new_review').slideUp(function(){
-        $('#makeReview').fadeIn();
+          $('#makeReview').fadeIn();
+
+          if($('.reviews').length > 0){
+            $('.reviews').append(data);
+          }
         });
       }
      });

@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
      @review.user = current_user
      if @review.save
        # p 'redirecting'
-       redirect_to profile_url(@profile), notice: 'Thank you for your review!'
+       render partial: 'one_review', notice: 'Thank you for your review!'
      else
        render 'profiles/show'
      end
@@ -41,7 +41,7 @@ class ReviewsController < ApplicationController
 
  private
  def review_params
-   params.require(:review).permit(:service_id, :user_id, :description, :star_rating, :dependability, :pancutuarity, :reliable_transportation, :hire_again)
+   params.require(:review).permit(:service_id, :user_id, :description, :star_rating, :dependability, :punctuality, :reliable_transportation, :hire_again)
  end
 
  def load_profile
