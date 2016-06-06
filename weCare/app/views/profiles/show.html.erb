@@ -31,9 +31,9 @@
         <p><span>Phone: </span> <%= @profile.phone_number %></p>
 
 
-
+<button id = "view_review" data-id = "<%= @profile.id %>"> View Reviews(<%= @profile.reviews.length%>)</button>
     <div id = "show_review" >
-      <button id = "view_review" data-id = "<%= @profile.id %>"> View Reviews(<%= @profile.reviews.length%>)</button>
+
     <%#= render partial: 'reviews/show_reviews' %>
     </div>
 
