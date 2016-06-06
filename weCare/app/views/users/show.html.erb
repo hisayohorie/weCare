@@ -12,6 +12,7 @@
     <% if @user.profile %>
     <div class = "user_info" id ="user_profile">
       <ul>
+        <h1>Profile:</h1>
         <li>Description:<%= @user.profile.description %></li>
         <li>Experience: <%= @user.profile.exp_num %></li>
         <li>Education: <%= @user.profile.education %></li>
@@ -28,14 +29,15 @@
 
   <% if @user.bookings %>
   <div class = "user_info" id = "bookings_you_made">
-    <h1>Your bookings:</h1>
     <% @user.bookings.each do |b| %>
       <ul>
-        <li>First Name: <%= b.profile.user.first_name %></li>
-        <li>Last Name: <%= b.profile.user.last_name %></li>
-        <li>Start Time: <%= b.start_time %></li>
-        <li>End Time: <%= b.end_time %></li>
-        <li>Confirmed: <%= b.confirmation %></li>
+        <h1>Your Bookings: </h1>
+        <li>First Name: <span><%= b.profile.user.first_name %></span></li>
+        <li>Last Name: <span><%= b.profile.user.last_name %></span></li>
+        <li>Start Time: <span><%= b.start_time %></span></li>
+        <li>End Time: <span><%= b.end_time %></span></li>
+        <li>Address: <span><%= b.address %></span></li>
+        <li>Confirmed: <span><%= b.confirmation %></span></li>
       </ul>
     <% end %>
     <% else %>
@@ -45,8 +47,8 @@
 
   <% if @user.profile %>
   <div class= "user_info" id = "booking_request">
-    <h1>Bookings requested for you:</h1>
     <% @user.profile.bookings.each do |b| %>
+      <h1>Bookings requested for you:</h1>
       <p>Name: <%= b.user.first_name %><% b.user.last_name %></p>
       <p>Address: <%= b.address %></p>
       <p>Email: <%= b.user.email %></p>
