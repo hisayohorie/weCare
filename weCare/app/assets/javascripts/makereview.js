@@ -1,5 +1,6 @@
 
 $(document).on('ready', function(){
+  console.log('hello!');
   $('#makeReview').on('click', function(){
     var profileId = $(this).data('id');
     $.ajax({
@@ -123,8 +124,11 @@ function bindFormToAjaxPost($form, profileId){
       dataType: "HTML",
       success: function(data) {
         $('#new_review').slideUp(function(){
-        $('#makeReview').fadeIn();
-        $('#show_review').append(data)
+          $('#makeReview').fadeIn();
+
+          if($('.reviews').length > 0){
+            $('.reviews').append(data);
+          }
         });
       }
      });

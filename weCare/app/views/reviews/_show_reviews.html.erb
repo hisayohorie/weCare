@@ -1,6 +1,8 @@
 
 
-  <button type = "button" class = "close">Close</button>
+<div class = "reviews">
+<button type = "button" class = "close">Close</button>
+
   <h1>Reviews:</h1>
   <% if @profile.reviews %>
     <% @profile.reviews.each do |r| %>
@@ -18,3 +20,4 @@
 <% else %>
   <p> No reviews yet </p>
 <% end %>
+</div>

@@ -30,11 +30,12 @@
         <p><span>Comfortable with pets: </span><%= @profile.pets %></p>
         <p><span>Phone: </span> <%= @profile.phone_number %></p>
 
+
+
+    <div id = "show_review" >
       <button id = "view_review" data-id = "<%= @profile.id %>"> View Reviews(<%= @profile.reviews.length%>)</button>
-      <div class="reviews" id = "show_review">
     <%#= render partial: 'reviews/show_reviews' %>
     </div>
-
 
 
     <div class = "modal-dialog">
