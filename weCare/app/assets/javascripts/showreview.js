@@ -7,7 +7,7 @@ $(document).on('ready', function(){
       method: 'GET',
       dataType: 'html',
       success: function(data){
-        $('.reviews').append(data).slideDown("slow");
+        $('#show_review').append(data).slideDown("slow");
         $('.close').on('click', function(){
         $('.reviews').hide();
       });
