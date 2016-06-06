@@ -6,12 +6,28 @@
   <h1>Reviews:</h1>
   <% if @profile.reviews %>
     <% @profile.reviews.each do |r| %>
-      <p>Star rating:<%= r.star_rating %></p>
-      <p>Dependabiity:<%= r.dependability %></p>
-      <p>Punctuality:<%= r.punctuality %></p>
-      <p>Reliable transportation<%= r.reliable_transportation %></p>
-      <p>Hire Again:<%= r.hire_again %></p>
-      <p>Description:<%= r.description%></p>
+      <p>Star rating:<p>Star rating:<%= r.star_rating.times do  %>
+            <i class="fa fa-star star"  aria-hidden="true"></i>
+          <% end %>
+      </p>
+      <p>Dependabiity:<%= r.dependability.times do %>
+        <i class="fa fa-star star"  aria-hidden="true"></i>
+        <% end %>
+      </p>
+      <p>Punctuality:<%= r.punctuality.times do %>
+        <i class="fa fa-star star"  aria-hidden="true"></i>
+        <% end %>
+      </p>
+      <p>Reliable transportation<%= r.reliable_transportation.times do %>
+      <i class="fa fa-star star"  aria-hidden="true"></i>
+      <% end %>
+      </p>
+      <p>Hire Again:<%= r.hire_again.times do %>
+        <i class="fa fa-star star"  aria-hidden="true"></i>
+      <% end %>
+      </p>
+      <p>Description:<%= r.description %></p>
+
       <% if r.user != nil %>
       <p><%= r.user.first_name %></p>
       <% end %>

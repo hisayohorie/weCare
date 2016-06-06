@@ -1,5 +1,8 @@
 <h2>Review</h2>
-  <p>Star rating:<%= @review.star_rating %></p>
+  <p>Star rating:<%= @review.star_rating.times do  %>
+        <i class="fa fa-star star"  aria-hidden="true"></i>
+      <% end %>
+  </p>
   <p>Dependabiity:<%= @review.dependability %></p>
   <p>Punctuality:<%= @review.punctuality %></p>
   <p>Reliable transportation<%= @review.reliable_transportation %></p>
