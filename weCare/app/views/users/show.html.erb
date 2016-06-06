@@ -24,11 +24,12 @@
         <li>Addres: <%= @user.profile.address %></li>
         <li>Rate: <%= @user.profile.rate %>></li>
       </ul>
-    <% end %>
     </div>
 
-  <% if @user.bookings %>
-  <div class = "user_info" id = "bookings_you_made">
+    <% end %>
+
+<div class = "user_info" id = "bookings_you_made">
+  <% if @user.bookings.any? %>
     <% @user.bookings.each do |b| %>
       <ul>
         <h1>Your Bookings: </h1>
@@ -41,7 +42,7 @@
       </ul>
     <% end %>
     <% else %>
-    <p>No bookings made yet</p>
+      <p>No bookings made yet</p>
   <% end %>
   </div>
 
@@ -55,11 +56,12 @@
       <p>Start Time: <%= b.start_time %></p>
       <p>End Time: <%= b.end_time %></p>
       <span><%= b.confirmation %></span>
+      <% if b == false %>
       <%= form_for [@user.profile, b] do |f|%>
       <%= f.hidden_field :confirmation, value: true %>
       <%= f.submit "Confirm Booking"%>
       <% end %>
     <% end %>
-  <% end %>
-
+    <% end%>
   </div>
+  <% end %>

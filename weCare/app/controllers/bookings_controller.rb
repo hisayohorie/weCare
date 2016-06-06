@@ -48,7 +48,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     if @booking.update_attributes(booking_params)
       flash[:notice]= "booking confirmed"
-      redirect_to profile_booking_url
+      redirect_to user_url(@booking.profile.user)
     else
       render :show
     end

@@ -14,7 +14,7 @@
     <p><%= f.text_field :exp_num %></p>
 
     <p><%= f.label :category %></p>
-    <p><%= f.select :services, options_from_collection_for_select(Service.all, "id", "category") %></p>
+    <p><%= f.select :service_ids, options_from_collection_for_select(Service.all, "id", "category") %></p>
 
     <p><%= f.label :language %></p>
     <p><%= f.text_field :language %></p>
