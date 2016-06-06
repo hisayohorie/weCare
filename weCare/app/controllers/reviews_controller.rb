@@ -41,7 +41,7 @@ class ReviewsController < ApplicationController
 
  private
  def review_params
-   params.require(:review).permit(:service_id, :user_id, :description, :star_rating, :dependability, :pancutuarity, :reliable_transportation, :hire_again)
+   params.require(:review).permit(:service_id, :user_id, :description, :star_rating, :dependability, :puncutuality, :reliable_transportation, :hire_again)
  end
 
  def load_profile

@@ -115,10 +115,11 @@ function star_check(){
 }
 function bindFormToAjaxPost($form, profileId){
   $form.on('submit', function(e){
+    var reviewData = $form.serialize();
     $.ajax({
       url: '/profiles/' + profileId + '/reviews',
       method: 'POST',
-      data: $form.serialize(),
+      data: reviewData,
       dataType: "HTML",
       success: function(data) {
         $('#new_review').slideUp(function(){
