@@ -4,16 +4,17 @@
   <h1>Reviews:</h1>
   <% if @profile.reviews %>
     <% @profile.reviews.each do |r| %>
-      <p>Star rating:<%= r.star_rating %></p>
-      <p>Dependabiity:<%= r.dependability %></p>
-      <p>Punctuality:<%= r.punctuality %></p>
-      <p>Reliable transportation<%= r.reliable_transportation %></p>
-      <p>Hire Again:<%= r.hire_again %></p>
-      <p>Description:<%= r.description%></p>
+      <p>Star rating:<span><%= r.star_rating %><i class="fa fa-star" aria-hidden="true"></i></span></p>
+      <p>Dependabiity:<span><%= r.dependability %></span></p>
+      <p>Punctuality:<span><%= r.punctuality %></span></p>
+      <p>Reliable transportation:<span><%= r.reliable_transportation %></span></p>
+      <p>Hire Again:<span><%= r.hire_again %></span></p>
+      <p>Description:<span><%= r.description%></span></p>
       <% if r.user != nil %>
-      <p><%= r.user.first_name %></p>
+      <p>Written by <span><%= r.user.first_name %></span></p>
       <% end %>
         <p>Posted at:<%= r.created_at %></p>
+        <hr>
     <% end %>
 <% else %>
   <p> No reviews yet </p>

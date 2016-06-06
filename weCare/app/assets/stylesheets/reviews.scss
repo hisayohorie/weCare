@@ -9,10 +9,16 @@
 
 .reviews {
   border: 1px solid $orange;
-  padding: 20px;
-  width: 35%;
+  padding: 30px;
+  width: 40%;
   margin-left: 50%;
-  margin-right: 15%;
+  margin-right: 10%;
+  p {
+    color: $medGray;
+  }
+  span {
+    color: $orange;
+  }
 
 }
 
