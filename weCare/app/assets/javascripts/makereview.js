@@ -124,6 +124,7 @@ function bindFormToAjaxPost($form, profileId){
       success: function(data) {
         $('#new_review').slideUp(function(){
         $('#makeReview').fadeIn();
+        $('#show_review').append(data)
         });
       }
      });

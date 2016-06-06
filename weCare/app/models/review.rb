@@ -2,7 +2,7 @@ class Review < ActiveRecord::Base
   belongs_to :profile
   belongs_to :user
 
-  validate :troller_prevention
+  # validate :troller_prevention
 
   def troller_prevention
     reviewer = self.user
