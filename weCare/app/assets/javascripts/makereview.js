@@ -16,7 +16,6 @@ $(document).on('ready', function(){
     });
   });
 });
-
 function star_check(){
   $('#one-star').on('click', function(){
     $(this).css('color', '#40E0D0');
@@ -114,25 +113,19 @@ function star_check(){
     $('#hire_again_1, #hire_again_2, #hire_again_3, #hire_again_4, #hire_again_5').css('color', '#40E0D0');
   });
 }
-
-
 function bindFormToAjaxPost($form, profileId){
   $form.on('submit', function(e){
-
     $.ajax({
       url: '/profiles/' + profileId + '/reviews',
       method: 'POST',
       data: $form.serialize(),
       dataType: "HTML",
       success: function(data) {
-
         $('#new_review').slideUp(function(){
         $('#makeReview').fadeIn();
         });
       }
      });
-
      e.preventDefault();
   });
-
 }

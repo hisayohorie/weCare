@@ -31,12 +31,15 @@
 }
 
 // review partial
+.rating_form {
+}
 .star_rating {
   display: inline-block;
   width: 100%;
   height: 70px;
   label {
     font-size: 0;
+
 
     .star {
       font-size: 2rem;
