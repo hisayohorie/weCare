@@ -32,7 +32,7 @@
         <p><span>Language: </span> <%= @profile.language %></p>
         <p><span>Transpotation: </span><%= @profile.transportation %></p>
         <p><span>Comfortable with pets: </span><%= @profile.pets %></p>
-        <p><span>Phone: </span> <%= @profile.phone_number %></p>
+        <p><span>Phone: </span> <%= number_to_phone(@profile.phone_number) %></p>
 
 
 <button id = "view_review" data-id = "<%= @profile.id %>"> View Reviews(<%= @profile.reviews.length%>)</button>
