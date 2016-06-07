@@ -1,0 +1,18 @@
+
+
+<%= form_for @user.profile do |f| %>
+  <div class = "fields">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class = "fields">
+    <%= f.label :number_of_experience %>
+    <%= f.text_field :exp_num %>
+  </div>
+
+  <div class = "fields">
+    <%= f.label :language %>
+    <%= f.text_field :language %>
+  </div>
+  <% end %>

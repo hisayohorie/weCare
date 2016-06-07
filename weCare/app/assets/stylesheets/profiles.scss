@@ -61,3 +61,15 @@
     display: none;
   }
 }
+.edit_profile {
+  text-align: center;
+  margin: 100px;
+  input {
+    margin: 10px;
+    text-align: center;
+  }
+  a {
+    color: $medGray;
+  }
+
+}

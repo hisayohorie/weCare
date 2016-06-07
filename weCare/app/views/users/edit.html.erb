@@ -1,2 +1,31 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class= "edit_profile">
+  <h1>Edit your information: </h1>
+
+  <%= form_for @user do |f| %>
+    <div class = "fields">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class = "fields">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+
+    <div class = "fields">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+
+    <% if @user.profile %>
+      <%= render partial: "profile_edit" %>
+    <% end %>
+
+    <div class = "submit">
+      <%= f.submit "Update" %>
+    </div>
+  <% end %>
+
+    <%= button_to "Cancel My Account", user_path(current_user), method: :delete%>
+    <%= link_to "Back To Home", root_path %>
+</div>

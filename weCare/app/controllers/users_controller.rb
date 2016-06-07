@@ -26,10 +26,21 @@ end
 def update
   @user = current_user
   if @user.update_attributes(user_params)
-    redirect_to current_user
+    redirect_to user_url(current_user)
   else
     render :edit
   end
+end
+
+def destroy
+  @user = current_user
+  @user.destroy
+
+  if @user.profile
+    @user.profile.destroy
+  end
+  session[:user_id] = nil
+  redirect_to root_url
 end
 
  private
