@@ -44,7 +44,7 @@ input[type="text"]{
   }
 
 }
-
+input[type= "tel"],
 input[type="number"] {
   // &#distance {
     display: inline-block;
@@ -62,6 +62,8 @@ input[type="number"] {
       outline-color: $green;
       // border-radius: 50px;
     }
+
+
 }
 
 .advanced_search {
