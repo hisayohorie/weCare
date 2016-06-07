@@ -20,7 +20,7 @@
     <p><%= f.text_field :language %></p>
 
     <p><%= f.label :Rate %></p>
-    <p>$<%= f.number_field :rate %>/hr</p>
+    <p>$<%= f.number_field :rate, min: 12 %>/hr</p>
 
     <p><%= f.label :phone_number %></p>
     <p><%= f.text_field :phone_number %></p>
@@ -35,7 +35,7 @@
     <p><%= f.text_field :address %></p>
 
     <p><%= f.label :distance_willing_to_travel %>(km)</p>
-    <p><%= f.number_field :travel_propensity %></p>
+    <p><%= f.number_field :travel_propensity, min: 0 %></p>
 
     <p><%= f.label :transportation %></p>
     <p><%= f.text_field :transportation %></p>
