@@ -104,15 +104,9 @@ label {
   color: $orange;
 }
 
-.error {
-  color: $medGray;
-}
 
-// #new_profile {
-//   select {
-//     color: $green;
-//     background-color: red;
-//     font-size: 15px;
-//     padding: 10px;
-//   }
-// }
+.flashMessage {
+color: $medGray;
+text-align: center;
+
+}

@@ -26,7 +26,9 @@
   border-radius: 25px;
   padding-top: 25px;
 }
-
+h1 {
+  text-align: center;
+}
 .login_modal {
   @extend .signup_modal;
   z-index: $zindexLogin;
