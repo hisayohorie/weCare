@@ -24,6 +24,7 @@ form {
 }
 
 .form-control,
+input[type= "tel"],
 input[type="text"]{
 
   // &#search {
@@ -44,7 +45,7 @@ input[type="text"]{
   }
 
 }
-input[type= "tel"],
+
 input[type="number"] {
   // &#distance {
     display: inline-block;
