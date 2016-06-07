@@ -14,16 +14,16 @@
     <div class = "user_info" id ="user_profile">
       <ul>
         <h1>Profile:</h1>
-        <li>Description:<%= @user.profile.description %></li>
-        <li>Experience: <%= @user.profile.exp_num %></li>
-        <li>Education: <%= @user.profile.education %></li>
-        <li>Languages: <%= @user.profile.language %></li>
-        <li>Availability: <%= @user.profile.availability %></li>
-        <li>Transportation: <%= @user.profile.transportation %></li>
-        <li>Comfortable with Pets: <%= @user.profile.pets %></li>
-        <li>Phone Number:<%= @user.profile.phone_number %></li>
-        <li>Addres: <%= @user.profile.address %></li>
-        <li>Rate: <%= @user.profile.rate %>></li>
+        <li>Description:<p><span><%= @user.profile.description %></span></p></li>
+        <li>Experience:<p><span> <%= @user.profile.exp_num %></span></p></li>
+        <li>Education:<p><span> <%= @user.profile.education %></span></p></li>
+        <li>Languages:<p><span> <%= @user.profile.language %></span></p></li>
+        <li>Availability:<p><span> <%= @user.profile.availability %></span></p></li>
+        <li>Transportation:<p><span> <%= @user.profile.transportation %></span></p></li>
+        <li>Comfortable with Pets:<p><span> <%= @user.profile.pets %></span></p></li>
+        <li>Phone Number:<p><span><%= @user.profile.phone_number %></span></p></li>
+        <li>Addres:<p><span> <%= @user.profile.address %></span></p></li>
+        <li>Rate:<p><span> <%= @user.profile.rate %></span> </p></li>
       </ul>
     </div>
 
@@ -59,12 +59,12 @@
   <div class= "user_info" id = "booking_request">
     <% @user.profile.bookings.each do |b| %>
       <h1>Bookings requested for you:</h1>
-      <p>Name: <%= b.user.first_name %><% b.user.last_name %></p>
-      <p>Address: <%= b.address %></p>
-      <p>Email: <%= b.user.email %></p>
-      <p>Start Time: <%= b.start_time %></p>
-      <p>End Time: <%= b.end_time %></p>
-      
+      <p>Name:<span> <%= b.user.first_name %><% b.user.last_name %></span></p>
+      <p>Address:<span> <%= b.address %></span></p>
+      <p>Email:<span> <%= b.user.email %></span></p>
+      <p>Start Time:<span> <%= b.start_time %></span></p>
+      <p>End Time:<span> <%= b.end_time %></span></p>
+
       <% if b.confirmation == false %>
       <%= form_for [@user.profile, b] do |f|%>
       <%= f.hidden_field :confirmation, value: true %>

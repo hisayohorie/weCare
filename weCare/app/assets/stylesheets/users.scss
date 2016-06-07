@@ -14,14 +14,16 @@
   align-items: center;
 
   border-bottom: 6px solid $orange;
+  border-top: 6px solid $green;
 
   padding: 100px;
   margin-left: 100px;
   margin-top: 100px;
   display: inline-flex;
+  width: 300px;
   flex-wrap: nowrap;
   justify-content: center;
-  vertical-align: bottom;
+  vertical-align: top;
   text-align: center;
 
 
