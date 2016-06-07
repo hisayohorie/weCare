@@ -2,9 +2,9 @@
   <div class = "babysitter_sidebar">
     <div class = "photo"><%= image_tag @profile.user.photo %>
       <div class="babysitter_booking">
-        <p>Book this babysitter:</p>
 
         <% if current_user != @profile.user %>
+          <p>Book this babysitter:</p>
           <p><%= button_to 'Book', new_profile_booking_path(@profile), method: :get, class: "booking_button"  %></p>
         <% end %>
       </div>
