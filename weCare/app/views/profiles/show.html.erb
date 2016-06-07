@@ -8,11 +8,14 @@
           <p><%= button_to 'Book', new_profile_booking_path(@profile), method: :get, class: "booking_button"  %></p>
         <% end %>
       </div>
-      <div id="reviewContainer"></div>
-      <button id="makeReview" data-id="<%= @profile.id %>">Write A Review</button>
-      <%# if current_user %>
+
+      <% if current_user != @profile.user %>
+        <div id="reviewContainer"></div>
+          <button id="makeReview" data-id="<%= @profile.id %>">Write A Review</button>
+        <%# if current_user %>
         <%#= render partial: "reviews/review_form" %>
       <%# end %>
+      <% end %>
     </div>
   </div>
 
