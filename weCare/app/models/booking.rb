@@ -22,6 +22,16 @@ class Booking < ActiveRecord::Base
         errors.add(:start_time, "Bookings can only be made for a later than today's date.")
       end
     end
+  def sitter_available?
+      #does the sitter/profile have any bookings?
+      other_bookings = profile.bookings.where("((start_time <= ? and end_time >= ?) or (start_time <= ? and end_time >= ?)) and
+      (confirmation = ?) and (id != ?)",
+      self.start_time, self.start_time, self.end_time, self.end_time, true, self.id)
+      if other_bookings.any?
+      errors.add(:start_time, "the care giver is not available that time")
+
+    end
+  end
 
 
     # def sitter_available?
@@ -38,16 +48,6 @@ class Booking < ActiveRecord::Base
     #     end
     #   end
 
-    def sitter_available?
-      #does the sitter/profile have any bookings?
-      other_bookings = profile.bookings.where("((start_time <= ? and end_time >= ?) or (start_time <= ? and end_time >= ?)) and
-      (confirmation = ?) and (id != ?)",
-      self.start_time, self.start_time, self.end_time, self.end_time, true, self.id)
-      if other_bookings.any?
-      errors.add(:start_time, "the care giver is not available that time")
-
-    end
-   end
 
 
 end

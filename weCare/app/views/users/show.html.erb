@@ -30,18 +30,24 @@
 
 <div class = "user_info" id = "bookings_you_made">
   <% if @user.bookings.any? %>
+    <h1>Your Bookings: </h1>
     <% @user.bookings.each do |b| %>
       <ul>
-        <h1>Your Bookings: </h1>
         <li>First Name: <span><%= b.profile.user.first_name %></span></li>
         <li>Last Name: <span><%= b.profile.user.last_name %></span></li>
         <li>Start Time: <span><%= b.start_time %></span></li>
         <li>End Time: <span><%= b.end_time %></span></li>
         <li>Address: <span><%= b.address %></span></li>
-        <li>Confirmed: <span><%= b.confirmation %></span></li>
-        <li class="btn link"><%= link_to "see the profile of this robot",  profile_path(b.profile) %></li>
+        <li>Confirmed:
+          <% if b.confirmation == false%>
+          <span>Not Yet Confirmed</span>
+          <% end %>
+          <% if b.confirmation == true%>
+          <span>Confirmed</span>
+          <% end %>
+        </li>
+        <li class="btn"><%= link_to "see the profile of this robot",  profile_path(b.profile) %></li>
       </ul>
-
     <% end %>
     <% else %>
       <p>No bookings made yet</p>
@@ -57,8 +63,8 @@
       <p>Email: <%= b.user.email %></p>
       <p>Start Time: <%= b.start_time %></p>
       <p>End Time: <%= b.end_time %></p>
-      <span><%= b.confirmation %></span>
-      <% if b == false %>
+      
+      <% if b.confirmation == false %>
       <%= form_for [@user.profile, b] do |f|%>
       <%= f.hidden_field :confirmation, value: true %>
       <%= f.submit "Confirm Booking"%>
